@@ -2,8 +2,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
 }
-
 
 .display {
   display: flex;
@@ -12,6 +12,15 @@ body {
   margin-top: 150px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-left {
   text-align: left;
+}
+
+.text-bold {
+  font-size: 22px;
+  font-weight: bold;
 }
