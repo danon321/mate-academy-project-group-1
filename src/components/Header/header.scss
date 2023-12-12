@@ -1,0 +1,18 @@
+$primary-color: #333;
+
+.header {
+  background-color: $primary-color;
+  color: white;
+
+  &__ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+  }
+}
