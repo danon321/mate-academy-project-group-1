@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.scss';
-import './variables/variables.scss';
 
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -21,7 +20,7 @@ const App = () => {
         <Route path="/user" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/posts/:id" element= {<HomeId />} />
+        <Route path="/posts/:id" element={<HomeId />} />
       </Routes>
     </Router>
   );
