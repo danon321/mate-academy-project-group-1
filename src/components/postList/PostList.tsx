@@ -8,7 +8,7 @@ export const PostList = () => {
   return (
     <>
       {posts.map((post: PostType) => (
-        <Post key={post.id} post={post} />
+        <Post key={post.id} />
       ))}
     </>
   );

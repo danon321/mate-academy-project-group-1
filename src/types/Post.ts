@@ -10,11 +10,11 @@ export const fullDate = () => {
   return result;
 };
 
-export type PostType = {
-  id: number,
-  title: string,
-  description: string,
-  author: string,
-  date: string,
-  imageUrl: string,
-};
+export interface PostType {
+  id: number;
+  title: string;
+  content: string;
+  likes: number;
+  dislikes: number;
+  date: string;
+}

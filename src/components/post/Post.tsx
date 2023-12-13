@@ -4,38 +4,35 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardActions,
+  Avatar,
+  IconButton,
+  Typography,
+} from '@mui/material';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { PostType } from '../../types/Post';
+import { useParams } from 'react-router';
 import { usePostSelector } from '../../hooks/hooks';
 
-type Props = {
-  post: PostType;
-};
-
-export const Post = ({ post }: Props) => {
-  // const onePost = useSelector(state => getUserPosts(state, post.id))
-  const onePost = usePostSelector((state) =>
-    state.posts.posts.find((v) => v.id === post.id)
+export const Post = () => {
+  const { id } = useParams();
+  const post = usePostSelector((state) =>
+    state.posts.posts.find((post) => Number(post.id) === Number(id))
   );
 
   return (
-    <Card className="display" sx={{ maxWidth: 1140 }}>
+    <Card className="display" sx={{ maxWidth: 1200 }}>
       <CardHeader
         className="text-center"
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {onePost?.id}
+            {post?.id}
           </Avatar>
         }
         action={
@@ -43,14 +40,7 @@ export const Post = ({ post }: Props) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title={post.title}
-        subheader={post.date}
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image={post.imageUrl}
-        alt="Paella dish"
+        subheader={post?.date}
       />
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
@@ -63,13 +53,12 @@ export const Post = ({ post }: Props) => {
       <CardContent>
         {/* <Typography paragraph className="text-center">
           Method:
-        </Typography>
-        <Typography paragraph className="text-center">
-          Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-          set aside for 10 minutes.
         </Typography> */}
+        <Typography paragraph className="text-center">
+          {post?.title}
+        </Typography>
         <Typography paragraph className="text-left">
-          {post.description}
+          {post?.content}
         </Typography>
       </CardContent>
     </Card>

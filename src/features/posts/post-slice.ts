@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fullDate, PostType } from '../../types/Post';
+import { PostType, fullDate } from '../../types/Post';
 
 type State = {
   posts: PostType[],
@@ -11,26 +11,26 @@ const initialState: State = {
     {
       id: 1,
       title: 'Title 1',
-      description: 'Description 1',
-      author: 'Author 1',
+      content: 'Content 3',
+      likes: 4,
+      dislikes: 1,
       date: fullDate(),
-      imageUrl: '/static/images/posts/paella.jpg',
     },
     {
       id: 2,
       title: 'Title 2',
-      description: 'Description 2',
-      author: 'Author 2',
+      content: 'Content 2',
+      likes: 2,
+      dislikes: 7,
       date: fullDate(),
-      imageUrl: '/static/images/posts/paella.jpg',
     },
     {
       id: 3,
       title: 'Title 3',
-      description: 'Description 3',
-      author: 'Author 3',
+      content: 'Content 3',
+      likes: 3,
+      dislikes: 3,
       date: fullDate(),
-      imageUrl: '/static/images/posts/paella.jpg',
     },
   ],
 };
