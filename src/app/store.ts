@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { postSlice } from '../features/posts/post-slice';
 
@@ -8,12 +7,10 @@ export const actions = {
   getPost: (id: number) => ({ type: GETPOST, id }),
 };
 
-const reducer = combineReducers({
-  posts: postSlice.reducer,
-});
-
 const store = configureStore({
-  reducer,
+  reducer: {
+    posts: postSlice.reducer,
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>;
