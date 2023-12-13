@@ -13,11 +13,14 @@ const schema = z.object({
       message:
         'Title can only contain letters, commas, dots, question marks, exclamation marks, hyphens and spaces',
     }),
-  content: z.string().max(500, {
-    message: 'Content must not exceed 500 characters',
-  }).min(40, {
-    message: 'Content needs to be at least 40 characters',
-  }),
+  content: z
+    .string()
+    .max(500, {
+      message: 'Content must not exceed 500 characters',
+    })
+    .min(40, {
+      message: 'Content needs to be at least 40 characters',
+    }),
 });
 
 export type FormData = {
