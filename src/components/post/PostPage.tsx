@@ -20,7 +20,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useParams } from 'react-router';
 import { usePostSelector } from '../../hooks/hooks';
 
-export const Post = () => {
+export const PostPage = () => {
   const { id } = useParams();
   const post = usePostSelector((state) =>
     state.posts.posts.find((post) => post.id === id)

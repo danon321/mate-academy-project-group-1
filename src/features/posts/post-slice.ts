@@ -9,7 +9,7 @@ type State = {
 const initialState: State = {
   posts: [
     {
-      id: 1,
+      id: '1',
       title: 'Title 1',
       content: 'Content 3',
       likes: 4,
@@ -17,7 +17,7 @@ const initialState: State = {
       date: fullDate(),
     },
     {
-      id: 2,
+      id: '2',
       title: 'Title 2',
       content: 'Content 2',
       likes: 2,
@@ -25,7 +25,7 @@ const initialState: State = {
       date: fullDate(),
     },
     {
-      id: 3,
+      id: '3',
       title: 'Title 3',
       content: 'Content 3',
       likes: 3,
