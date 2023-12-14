@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { z, ZodError } from 'zod';
 import { Button, TextField, Box } from '@mui/material';
+import { fullDate, PostType, randomId } from '../../types/post';
 
 const schema = z.object({
   title: z
@@ -23,13 +24,8 @@ const schema = z.object({
     }),
 });
 
-export type FormData = {
-  title: string;
-  content: string;
-};
-
 type AddProps = {
-  onSubmit: (data: FormData) => void;
+  onSubmit: (data: PostType) => void;
 };
 
 export const Add: React.FC<AddProps> = ({ onSubmit }: AddProps) => {
@@ -59,17 +55,28 @@ export const Add: React.FC<AddProps> = ({ onSubmit }: AddProps) => {
       }
     }
   };
-
+  
   const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+  
     validateTitle(title);
     validateContent(content);
-
+  
     if (!titleError && !contentError) {
-      onSubmit({ title, content });
+      const todayDate = fullDate();
+      const newPostId = randomId(10);
+      onSubmit({
+        title, content, date: todayDate,
+        id: newPostId,
+        likes: 0,
+        dislikes: 0
+      });
+      setContent('');
+      setTitle('');
     }
   };
-
+  
+  
   return (
     <div>
       <h1>Add</h1>
