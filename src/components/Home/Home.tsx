@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Post } from '../../types/post';
+import { PostType } from '../../types/post';
 import { initialPosts } from '../../InitialPosts/initialPosts';
 import './home.scss';
 
 export const Home: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>(initialPosts);
+  const [posts, setPosts] = useState<PostType[]>(initialPosts);
 
-  const handleLike = (postId: number) => {
+  const handleLike = (postId: string) => {
     const updatedPosts = posts.map((post) =>
       post.id === postId ? { ...post, likes: post.likes + 1 } : post
     );
     setPosts(updatedPosts);
   };
 
-  const handleDislike = (postId: number) => {
+  const handleDislike = (postId: string) => {
     const updatedPosts = posts.map((post) =>
       post.id === postId ? { ...post, dislikes: post.dislikes + 1 } : post
     );
@@ -21,13 +21,13 @@ export const Home: React.FC = () => {
   };
 
   const [clickedLikeButtons, setClickedLikeButtons] = useState<{
-    [key: number]: boolean;
+    [key: string]: boolean;
   }>({});
   const [clickedDislikeButtons, setClickedDislikeButtons] = useState<{
-    [key: number]: boolean;
+    [key: string]: boolean;
   }>({});
 
-  const handleLikeButtonClick = (postId: number) => {
+  const handleLikeButtonClick = (postId: string) => {
     const updatedLikeButtons = {
       ...clickedLikeButtons,
       [postId]: !clickedLikeButtons[postId],
@@ -45,7 +45,7 @@ export const Home: React.FC = () => {
     }
   };
 
-  const handleDislikeButtonClick = (postId: number) => {
+  const handleDislikeButtonClick = (postId: string) => {
     const updatedDislikeButtons = {
       ...clickedDislikeButtons,
       [postId]: !clickedDislikeButtons[postId],

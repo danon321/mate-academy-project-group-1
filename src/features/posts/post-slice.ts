@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { PostType, fullDate } from '../../types/Post';
+import { PostType, fullDate } from '../../types/post';
 
 type State = {
-  posts: PostType[],
-  
+  posts: PostType[];
 };
 
 const initialState: State = {
@@ -42,13 +41,12 @@ export const postSlice = createSlice({
     // getPost: (state: any, action: any) => {
     //   return state.posts.find((post: PostType) => post.id === action.payload.id);
     // },
-  }
-
+  },
 });
 
 // export const selectPosts = (state: any) => state.posts;
 
-// export const getUserPosts = (state: any, postId: any) => 
+// export const getUserPosts = (state: any, postId: any) =>
 //   createSelector(
 //     selectPosts,
 //     state => state.posts.filter((post: any) => post.id === postId)

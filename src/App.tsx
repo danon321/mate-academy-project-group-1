@@ -7,7 +7,6 @@ import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
 import HomeId from './components/HomeId/HomeId';
 
-
 const App = () => {
   // const handleSubmit = ((data: FormData) => {
   //   console.log(data);

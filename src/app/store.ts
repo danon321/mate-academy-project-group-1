@@ -10,7 +10,7 @@ export const actions = {
 const store = configureStore({
   reducer: {
     posts: postSlice.reducer,
-  }
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
