@@ -3,26 +3,25 @@ import './App.scss';
 
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import { Add } from './components/Add/Add';
 import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
-import HomeId from './components/HomeId/HomeId';
-import { FormData } from './components/Add/Add';
+import { PostPage } from './components/post';
+
 
 const App = () => {
-  const handleSubmit = (data: FormData) => {
-    console.log(data);
-  };
+  // const handleSubmit = ((data: FormData) => {
+  //   console.log(data);
+  // });
 
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/add" element={<Add onSubmit={handleSubmit} />} />
+        {/* <Route path="/add" element={<Add onSubmit={handleSubmit} />} /> */}
         <Route path="/user" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/posts/:id" element={<HomeId />} />
+        <Route path="/posts/:id" element= {<PostPage />} />
       </Routes>
     </Router>
   );
