@@ -23,7 +23,7 @@ import { usePostSelector } from '../../hooks/hooks';
 export const Post = () => {
   const { id } = useParams();
   const post = usePostSelector((state) =>
-    state.posts.posts.find((post) => Number(post.id) === Number(id))
+    state.posts.posts.find((post) => post.id === id)
   );
 
   return (

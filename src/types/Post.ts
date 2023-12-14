@@ -11,7 +11,7 @@ export const fullDate = () => {
 };
 
 export interface PostType {
-  id: number;
+  id: string;
   title: string;
   content: string;
   likes: number;
