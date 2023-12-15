@@ -2,12 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 
 import Header from './components/Header/Header';
-import Home from './components/Home/Home';
+import { Home } from './components/Home/Home';
 import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
-import { PostPage } from './components/post';
+import HomeId from './components/HomeId/HomeId';
 import { Add, FormData } from './components/Add/Add';
-
 
 const App = () => {
   const handleSubmit = ((data: FormData) => {
@@ -22,7 +21,7 @@ const App = () => {
         <Route path="/user" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/posts/:id" element= {<PostPage />} />
+        <Route path="/posts/:id" element={<HomeId />} />
       </Routes>
     </Router>
   );

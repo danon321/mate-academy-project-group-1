@@ -4,6 +4,7 @@ import { PostType } from '../../types/post';
 
 type State = {
   posts: PostType[];
+  posts: PostType[];
 };
 
 const initialState: State = {
