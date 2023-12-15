@@ -12,15 +12,21 @@ body {
   margin-top: 150px;
 }
 
-.text-center {
-  text-align: center;
+.span-date {
+  font-weight: 300;
+  font-size: 11px;
 }
 
-.text-left {
-  text-align: left;
+.title {
+  color: #d4a373;
 }
 
-.text-bold {
-  font-size: 22px;
-  font-weight: bold;
+.dispay-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.size {
+  width: 40px;
 }

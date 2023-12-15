@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { PostType, fullDate } from '../../types/Post';
+import { content2, title2 } from '../../contents/content';
+import { PostType } from '../../types/post';
 
 type State = {
-  posts: PostType[],
-  
+  posts: PostType[];
 };
 
 const initialState: State = {
@@ -11,18 +11,18 @@ const initialState: State = {
     {
       id: '1',
       title: 'Title 1',
-      content: 'Content 3',
+      content: 'Content 1',
       likes: 4,
       dislikes: 1,
-      date: fullDate(),
+      date: '2023-12-13  time: 15:00',
     },
     {
       id: '2',
-      title: 'Title 2',
-      content: 'Content 2',
+      title: title2,
+      content: content2,
       likes: 2,
       dislikes: 7,
-      date: fullDate(),
+      date: '2023-12-13  time: 14:00',
     },
     {
       id: '3',
@@ -30,7 +30,7 @@ const initialState: State = {
       content: 'Content 3',
       likes: 3,
       dislikes: 3,
-      date: fullDate(),
+      date: '2023-12-12  time: 12:12',
     },
   ],
 };
@@ -38,18 +38,5 @@ const initialState: State = {
 export const postSlice = createSlice({
   name: 'posts',
   initialState,
-  reducers: {
-    // getPost: (state: any, action: any) => {
-    //   return state.posts.find((post: PostType) => post.id === action.payload.id);
-    // },
-  }
-
+  reducers: {},
 });
-
-// export const selectPosts = (state: any) => state.posts;
-
-// export const getUserPosts = (state: any, postId: any) => 
-//   createSelector(
-//     selectPosts,
-//     state => state.posts.filter((post: any) => post.id === postId)
-//   );
