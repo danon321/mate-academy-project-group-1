@@ -13,10 +13,7 @@ type Props = {
   setLike: (bool: boolean) => void;
 };
 
-export const Like: React.FC<Props> = ({
-  like,
-  setLike,
-}: Props) => {
+export const Like: React.FC<Props> = ({ like, setLike }: Props) => {
   const { id } = useParams();
   const post = usePostSelector((state) =>
     state.posts.posts.find((post) => post.id === id)

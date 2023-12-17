@@ -7,8 +7,8 @@ const ADD_DISLIKE = 'addDislike';
 
 export const actions = {
   getPost: (id: string) => ({ type: GETPOST, id }),
-  addLike: (id: string) => ({ type: ADD_LIKE, id}),
-  addDislike: (id: string) => ({ type: ADD_DISLIKE, id}),
+  addLike: (id: string) => ({ type: ADD_LIKE, id }),
+  addDislike: (id: string) => ({ type: ADD_DISLIKE, id }),
 };
 
 const store = configureStore({

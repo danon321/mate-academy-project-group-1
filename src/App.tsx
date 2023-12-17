@@ -9,9 +9,9 @@ import { Add, FormData } from './components/Add/Add';
 import { PostPage } from './components/post';
 
 const App = () => {
-  const handleSubmit = ((data: FormData) => {
+  const handleSubmit = (data: FormData) => {
     console.log(data);
-  });
+  };
 
   return (
     <Router>

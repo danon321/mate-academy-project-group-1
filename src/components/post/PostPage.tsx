@@ -66,10 +66,7 @@ export const PostPage = () => {
             <Typography paragraph sx={{ maxWidth: 860 }}></Typography>
             <Box className="dispay-between">
               <span className="span-date">{post?.date}</span>
-              <Like
-                like={like}
-                setLike={setLike}
-              />
+              <Like like={like} setLike={setLike} />
               <Box>
                 <IconButton>
                   <FacebookSharpIcon />
