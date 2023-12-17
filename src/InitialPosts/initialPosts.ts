@@ -1,6 +1,4 @@
-import { PostType } from '../types/post';
-
-export const initialPosts: PostType[] = [
+export const initialPosts = [
   {
     id: '1',
     title: 'Speed Update - co wiemy o aktualizacji algorytmu Google',

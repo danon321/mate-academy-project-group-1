@@ -2,9 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { postSlice } from '../features/posts/post-slice';
 
 const GETPOST = 'getPost';
+const ADD_LIKE = 'addLike';
+const ADD_DISLIKE = 'addDislike';
 
 export const actions = {
-  getPost: (id: number) => ({ type: GETPOST, id }),
+  getPost: (id: string) => ({ type: GETPOST, id }),
+  addLike: (id: string) => ({ type: ADD_LIKE, id}),
+  addDislike: (id: string) => ({ type: ADD_DISLIKE, id}),
 };
 
 const store = configureStore({

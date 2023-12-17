@@ -1,5 +1,8 @@
 import './postPage.css';
 
+import { useParams } from 'react-router';
+import { usePostSelector } from '../../hooks/hooks';
+import { useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -8,12 +11,15 @@ import {
   Avatar,
   IconButton,
   Typography,
+  Box,
 } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { useParams } from 'react-router';
-import { usePostSelector } from '../../hooks/hooks';
+import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Like } from '../likes';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -21,9 +27,11 @@ export const PostPage = () => {
     state.posts.posts.find((post) => post.id === id)
   );
 
+  const [like, setLike] = useState<boolean | undefined>(undefined);
+
   return (
     <>
-      <div>
+      <Box className="container">
         <Card className="display" sx={{ maxWidth: 860 }}>
           <CardHeader
             avatar={
@@ -49,23 +57,34 @@ export const PostPage = () => {
             </IconButton>
           </CardActions>
           <CardContent>
-            <Typography paragraph className="title" align='center' variant="h4">
+            <Typography paragraph className="title" align="center" variant="h4">
               {post?.title}
             </Typography>
             <Typography paragraph align="left">
               {post?.content}
             </Typography>
-            <Typography
-              paragraph
-              sx={{ maxWidth: 860 }}
-            ></Typography>
-            <Typography paragraph className="dispay-between">
+            <Typography paragraph sx={{ maxWidth: 860 }}></Typography>
+            <Box className="dispay-between">
               <span className="span-date">{post?.date}</span>
-              <img className="size" src='/static/images/posts/facebook.svg'/>
-            </Typography>
+              <Like
+                like={like}
+                setLike={setLike}
+              />
+              <Box>
+                <IconButton>
+                  <FacebookSharpIcon />
+                </IconButton>
+                <IconButton>
+                  <TwitterIcon />
+                </IconButton>
+                <IconButton>
+                  <YouTubeIcon />
+                </IconButton>
+              </Box>
+            </Box>
           </CardContent>
         </Card>
-      </div>
+      </Box>
     </>
   );
 };
