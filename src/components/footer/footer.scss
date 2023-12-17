@@ -1,0 +1,119 @@
+$footer-background-color: #212529;
+$footer-fonts-color: #e5e5e5;
+
+.footer {
+  height: 400px;
+  background-color: $footer-background-color;
+  color: #fff;
+  margin: 0 auto;
+  
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      'item1 item2 item3 item4'
+      'mail about address icons'
+      'phone partners . .'
+      '. job . .'
+      '. advertise . .'
+      '. member . .';
+    font-family: Lora;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    padding: 100px 0;
+    margin: auto;
+    align-items: start;
+    justify-items: center;
+    box-sizing: border-box;
+  }
+
+  &__rows {
+    color: $footer-fonts-color;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__bottom {
+    height: 80px;
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $footer-fonts-color;
+  }
+}
+
+.container {
+ margin: 0 auto;
+}
+
+.grid--icons {
+  display: grid;
+  grid-template-columns: repeat(3, 35px);
+  color: $footer-fonts-color;
+}
+
+a {
+  text-decoration: none;
+  color: $footer-fonts-color;
+}
+
+.item1 {
+  grid-area: item1;
+}
+
+.item2 {
+  grid-area: item2;
+}
+
+.item3 {
+  grid-area: item3;
+}
+
+.item4 {
+  grid-area: item4;
+}
+
+.mail {
+  grid-area: mail;
+}
+
+.phone {
+  grid-area: phone;
+}
+
+.about {
+  grid-area: about;
+}
+
+.partners {
+  grid-area: partners;
+}
+
+.job {
+  grid-area: job;
+}
+
+.advertise {
+  grid-area: advertise;
+}
+
+.member {
+  grid-area: member;
+}
+
+.address {
+  grid-area: address;
+}
+
+.icons {
+  grid-area: icons;
+}

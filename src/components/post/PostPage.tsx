@@ -32,7 +32,7 @@ export const PostPage = () => {
   return (
     <>
       <Box className="container">
-        <Card className="display" sx={{ maxWidth: 860 }}>
+        <Card className="display" sx={{ maxWidth: 1000 }}>
           <CardHeader
             avatar={
               <Avatar

@@ -7,6 +7,7 @@ import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
 import { Add, FormData } from './components/Add/Add';
 import { PostPage } from './components/post';
+import { Footer } from './components/footer/Footer';
 
 const App = () => {
   const handleSubmit = (data: FormData) => {
