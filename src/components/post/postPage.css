@@ -1,0 +1,36 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.span-date {
+  font-weight: 300;
+  font-size: 11px;
+}
+
+.title {
+  color: #d4a373;
+}
+
+.dispay-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.size {
+  width: 50px;
+}
+
+.display-hidden {
+  display: none;
+}

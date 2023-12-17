@@ -1,9 +1,8 @@
-import './post.css';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import './postPage.css';
 
+import { useParams } from 'react-router';
+import { usePostSelector } from '../../hooks/hooks';
+import { useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -12,13 +11,15 @@ import {
   Avatar,
   IconButton,
   Typography,
+  Box,
 } from '@mui/material';
-import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { useParams } from 'react-router';
-import { usePostSelector } from '../../hooks/hooks';
+import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Like } from '../likes';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -26,41 +27,61 @@ export const PostPage = () => {
     state.posts.posts.find((post) => post.id === id)
   );
 
+  const [like, setLike] = useState<boolean | undefined>(undefined);
+
   return (
-    <Card className="display" sx={{ maxWidth: 1200 }}>
-      <CardHeader
-        className="text-center"
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {post?.id}
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        subheader={post?.date}
-      />
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
-      <CardContent>
-        {/* <Typography paragraph className="text-center">
-          Method:
-        </Typography> */}
-        <Typography paragraph className="text-center">
-          {post?.title}
-        </Typography>
-        <Typography paragraph className="text-left">
-          {post?.content}
-        </Typography>
-      </CardContent>
-    </Card>
+    <>
+      <Box className="container">
+        <Card className="display" sx={{ maxWidth: 860 }}>
+          <CardHeader
+            avatar={
+              <Avatar
+                alt="Jennifer Lawrence"
+                src="/static/images/posts/jennifer_lawrence.svg"
+                sx={{ width: 56, height: 56 }}
+              />
+            }
+            subheader="Jennifer Lawrence"
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+          />
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
+          <CardContent>
+            <Typography paragraph className="title" align="center" variant="h4">
+              {post?.title}
+            </Typography>
+            <Typography paragraph align="left">
+              {post?.content}
+            </Typography>
+            <Typography paragraph sx={{ maxWidth: 860 }}></Typography>
+            <Box className="dispay-between">
+              <span className="span-date">{post?.date}</span>
+              <Like like={like} setLike={setLike} />
+              <Box>
+                <IconButton>
+                  <FacebookSharpIcon />
+                </IconButton>
+                <IconButton>
+                  <TwitterIcon />
+                </IconButton>
+                <IconButton>
+                  <YouTubeIcon />
+                </IconButton>
+              </Box>
+            </Box>
+          </CardContent>
+        </Card>
+      </Box>
+    </>
   );
 };
