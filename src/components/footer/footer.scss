@@ -10,12 +10,13 @@ $footer-fonts-color: #e5e5e5;
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr) 105px;
+    grid-template-rows: repeat(6, 15px);
+    row-gap: 16px;
     grid-template-areas:
       'item1 item2 item3 item4'
       'mail about address icons'
-      'phone partners . .'
+      'phone partners address .'
       '. job . .'
       '. advertise . .'
       '. member . .';
@@ -24,10 +25,9 @@ $footer-fonts-color: #e5e5e5;
     font-style: normal;
     font-weight: 700;
     line-height: 25px;
-    padding: 100px 0;
-    margin: auto;
+    padding: 100px 16px;
     align-items: start;
-    justify-items: center;
+    // justify-items: center;
     box-sizing: border-box;
   }
 
@@ -43,7 +43,6 @@ $footer-fonts-color: #e5e5e5;
 
   &__bottom {
     height: 80px;
-    width: 100vw;
     background-color: #343a40;
     display: flex;
     align-items: center;
@@ -59,6 +58,7 @@ $footer-fonts-color: #e5e5e5;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0 31px;
     margin: 0 auto;
   }
 }
