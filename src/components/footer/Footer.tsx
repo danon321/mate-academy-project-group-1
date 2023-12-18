@@ -44,10 +44,10 @@ export const Footer = () => {
           </div>
         </div>
       </footer>
-      <div >
-        <div className="footer__bottom">
-          <span>2021 | RUNO Publisher Studio</span>
-          <span>Subscribe Now</span>
+      <div className='footer__bottom'>
+        <div className="bottom__display">
+          <span className='item'>2021 | RUNO Publisher Studio</span>
+          <span className='item'>Subscribe Now</span>
         </div>
       </div>
     </>

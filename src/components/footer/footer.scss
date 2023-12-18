@@ -43,16 +43,24 @@ $footer-fonts-color: #e5e5e5;
 
   &__bottom {
     height: 80px;
+    width: 100vw;
     background-color: #343a40;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-between;
     color: $footer-fonts-color;
   }
 }
 
-.container {
- margin: 0 auto;
+.bottom {
+  &__display {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
 }
 
 .grid--icons {
