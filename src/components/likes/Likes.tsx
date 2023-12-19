@@ -3,10 +3,10 @@ import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
-import { usePostSelector } from '../../hooks/hooks';
+import { usePostSelector } from '../../app/redux/hooks/hooks';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { postSlice } from '../../features/posts/post-slice';
+import { postSlice } from '../../app/redux/feature/posts/post-slice';
 
 type Props = {
   like: boolean | undefined;

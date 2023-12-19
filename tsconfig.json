@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/contents"]
+  "include": ["src", "src/contents", "public/static/redux/data/InitialPosts"]
 }

@@ -1,7 +1,7 @@
 import './postPage.css';
 
 import { useParams } from 'react-router';
-import { usePostSelector } from '../../hooks/hooks';
+import { usePostSelector } from '../../app/redux/hooks/hooks';
 import { useState } from 'react';
 import {
   Card,

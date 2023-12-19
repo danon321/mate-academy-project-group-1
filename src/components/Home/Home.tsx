@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PostType } from '../../types/post';
-import { initialPosts } from '../../InitialPosts/initialPosts';
+import { initialPosts } from '../../../public/static/redux/data/InitialPosts/initialPosts';
 import './home.scss';
 
 export const Home: React.FC = () => {

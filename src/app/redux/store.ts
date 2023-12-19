@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { postSlice } from '../features/posts/post-slice';
+import { postSlice } from './feature/posts/post-slice';
 
 const GETPOST = 'getPost';
 const ADD_LIKE = 'addLike';
