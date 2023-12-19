@@ -6,24 +6,19 @@ import { Home } from './components/Home/Home';
 import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
 import HomeId from './components/HomeId/HomeId';
-import { PostType } from './types/post';
-import { Add } from './components/Add/Add';
-
+import Add from './components/Add/Add';
 
 const App = () => {
-  const handleSubmit = ((data: PostType) => {
-    console.log(data);
-  });
 
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/add" element={<Add onSubmit={handleSubmit} />} />
+        <Route path="/add" element={<Add />} />
         <Route path="/user" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/posts/:id" element= {<HomeId />} />
+        <Route path="/posts/:id" element={<HomeId />} />
       </Routes>
     </Router>
   );
