@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <>
       <footer className="footer">
-        <div className="footer__grid container">
+        <div className="footer__grid footer__container container">
           <span className="item1">Contact the Publisher</span>
           <span className="item2">Explorate</span>
           <span className="item3">Headquarter</span>
@@ -45,7 +45,7 @@ export const Footer = () => {
         </div>
       </footer>
       <div className='footer__bottom'>
-        <div className="bottom__display">
+        <div className="footer__bottom__display">
           <span className='item'>2021 | RUNO Publisher Studio</span>
           <span className='item'>Subscribe Now</span>
         </div>

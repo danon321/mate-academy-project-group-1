@@ -31,8 +31,8 @@ export const PostPage = () => {
 
   return (
     <>
-      <Box className="container">
-        <Card className="display" sx={{ maxWidth: 1000 }}>
+      <Box className="box-page">
+        <Card className="container" sx={{ maxWidth: 1000 }}>
           <CardHeader
             avatar={
               <Avatar
@@ -64,7 +64,7 @@ export const PostPage = () => {
               {post?.content}
             </Typography>
             <Typography paragraph sx={{ maxWidth: 860 }}></Typography>
-            <Box className="dispay-between">
+            <Box className="display-between">
               <span className="span-date">{post?.date}</span>
               <Like like={like} setLike={setLike} />
               <Box>
