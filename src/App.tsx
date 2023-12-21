@@ -6,15 +6,14 @@ import { Home } from './components/Home/Home';
 import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
 import HomeId from './components/HomeId/HomeId';
-import Add from './components/Add/Add';
+import AddUser from './components/Add/AddUser';
 
 const App = () => {
-
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/add" element={<Add />} />
+        <Route path="/add" element={<AddUser />} />
         <Route path="/user" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
