@@ -1,0 +1,119 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 15px;
+  position: relative;
+  height: calc(100vh - 100px);
+  border-bottom-left-radius: 10px;
+}
+
+.box1,
+.box2 {
+  width: 100%;
+}
+
+.box1 {
+  height: 30%;
+  position: relative;
+}
+
+.motto {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px 15px;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: medium;
+  font-style: italic;
+}
+
+.box2 {
+  background-color: #2ecc71;
+  height: 70%;
+  display: flex;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.details {
+  margin: 0;
+  width: 40%;
+
+  border-right: 1px solid black;
+  background-color: #48e188;
+  padding-top: 40px;
+  border-bottom-left-radius: 10px;
+}
+
+.datacontent {
+  height: 60%;
+}
+
+.data {
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+
+.columns {
+  display: flex;
+  border-top: 1px solid black;
+  height: 40%;
+  border-bottom-left-radius: 10px;
+}
+
+.column {
+  width: 33.33%;
+  height: 100%;
+  border-right: 1px solid black;
+  text-align: center;
+}
+.column:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.column:last-child {
+  border-right: none;
+}
+.name {
+  margin: 0;
+  padding-top: 20px;
+}
+.number {
+  margin: 0;
+  font-size: x-small;
+}
+
+.about {
+  width: 60%;
+  padding: 5px;
+}
+
+.content {
+  font-size: small;
+}
+
+.box3 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.landscape {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
