@@ -12,7 +12,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScroll = window.scrollY || document.documentElement.scrollTop;
+      const currentScroll =
+        window.scrollY || document.documentElement.scrollTop;
       setIsVisible(currentScroll < lastScrollTop || currentScroll <= 0);
       setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
     };
@@ -25,7 +26,10 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target as Node)) {
+      if (
+        profileMenuRef.current &&
+        !profileMenuRef.current.contains(event.target as Node)
+      ) {
         setIsProfileMenuOpen(false);
       }
     };
@@ -62,16 +66,32 @@ const Header = () => {
             </div>
             {isProfileMenuOpen && (
               <div ref={profileMenuRef} className="profile-menu">
-                <Link to="/profil-uzytkownia" onClick={toggleProfileMenu} className="profile-menu__link">
+                <Link
+                  to="/profil-uzytkownia"
+                  onClick={toggleProfileMenu}
+                  className="profile-menu__link"
+                >
                   Profil
                 </Link>
-                <Link to="/posty-uzytkownika" onClick={toggleProfileMenu} className="profile-menu__link">
+                <Link
+                  to="/posty-uzytkownika"
+                  onClick={toggleProfileMenu}
+                  className="profile-menu__link"
+                >
                   Posty
                 </Link>
-                <Link to="/ustawienia-profilu-uzytkownika" onClick={toggleProfileMenu} className="profile-menu__link">
+                <Link
+                  to="/ustawienia-profilu-uzytkownika"
+                  onClick={toggleProfileMenu}
+                  className="profile-menu__link"
+                >
                   Ustawienia
                 </Link>
-                <Link to="" onClick={toggleProfileMenu} className="profile-menu__link">
+                <Link
+                  to=""
+                  onClick={toggleProfileMenu}
+                  className="profile-menu__link"
+                >
                   Wyloguj
                 </Link>
               </div>
