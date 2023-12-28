@@ -5,23 +5,27 @@ import Header from './components/Header/Header';
 import { Home } from './components/Home/Home';
 import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
-import HomeId from './components/HomeId/HomeId';
+import { Add, FormData } from './components/Add/Add';
+import { PostPage } from './components/post';
+import { Footer } from './components/Footer/Footer';
+import React from 'react';
 
 const App = () => {
-  // const handleSubmit = ((data: FormData) => {
-  //   console.log(data);
-  // });
+  const handleSubmit = (data: FormData) => {
+    console.log(data);
+  };
 
   return (
     <Router>
       <Header />
       <Routes>
-        {/* <Route path="/add" element={<Add onSubmit={handleSubmit} />} /> */}
+        <Route path="/add" element={<Add onSubmit={handleSubmit} />} />
         <Route path="/user" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/posts/:id" element={<HomeId />} />
+        <Route path="/posts/:id" element={<PostPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
