@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import defaultpicture from './defaultpicture.png';
 import './header.scss';
 
@@ -41,7 +41,8 @@ const Header = () => {
   }, []);
 
   const isActive = (path: string) => {
-    return location.pathname === path ? 'activeLink' : '';
+    const currentPath = location.pathname;
+    return currentPath === path ? 'activeLink' : '';
   };
 
   const toggleProfileMenu = () => {
@@ -50,15 +51,15 @@ const Header = () => {
 
   return (
     <header className={`header ${isVisible ? '' : 'header--hidden'}`}>
-      <div className="navbar">
+      <nav className="navbar">
         <div className="navbar__left">BLOG_NAME</div>
         <div className="navbar__right">
-          <Link to="/" className={`header__link ${isActive('/')}`}>
+          <NavLink to="/" className={`header__link ${isActive('/')}`}>
             Home
-          </Link>
-          <Link to="/add" className={`header__link ${isActive('/add')}`}>
+          </NavLink>
+          <NavLink to="/add" className={`header__link ${isActive('/add')}`}>
             Add
-          </Link>
+          </NavLink>
           <span className="separator"> | </span>
           <div className="profile-wrapper">
             <div className="profile-icon" onClick={toggleProfileMenu}>
@@ -66,39 +67,39 @@ const Header = () => {
             </div>
             {isProfileMenuOpen && (
               <div ref={profileMenuRef} className="profile-menu">
-                <Link
+                <NavLink
                   to="/profil-uzytkownia"
                   onClick={toggleProfileMenu}
                   className="profile-menu__link"
                 >
                   Profil
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/posty-uzytkownika"
                   onClick={toggleProfileMenu}
                   className="profile-menu__link"
                 >
                   Posty
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/ustawienia-profilu-uzytkownika"
                   onClick={toggleProfileMenu}
                   className="profile-menu__link"
                 >
                   Ustawienia
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to=""
                   onClick={toggleProfileMenu}
                   className="profile-menu__link"
                 >
                   Wyloguj
-                </Link>
+                </NavLink>
               </div>
             )}
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };
