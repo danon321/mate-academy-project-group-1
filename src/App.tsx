@@ -5,7 +5,8 @@ import Header from './components/Header/Header';
 import { Home } from './components/Home/Home';
 import User from './components/User/User';
 import NotFound from './components/NotFound/NotFound';
-import HomeId from './components/HomeId/HomeId';
+import { PostPage } from './components/post';
+import { Footer } from './components/Footer/Footer';
 import AddUser from './components/Add/AddUser';
 
 const App = () => {
@@ -17,8 +18,9 @@ const App = () => {
         <Route path="/user" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/posts/:id" element={<HomeId />} />
+        <Route path="/posts/:id" element={<PostPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
