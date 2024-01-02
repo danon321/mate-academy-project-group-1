@@ -39,12 +39,7 @@ const Header = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
-  const isActive = (path: string) => {
-    const currentPath = location.pathname;
-    return currentPath === path ? 'activeLink' : '';
-  };
-
+  
   const toggleProfileMenu = () => {
     setIsProfileMenuOpen(!isProfileMenuOpen);
   };
@@ -54,10 +49,14 @@ const Header = () => {
       <nav className="navbar">
         <div className="navbar__left">BLOG_NAME</div>
         <div className="navbar__right">
-          <NavLink to="/" className={`header__link ${isActive('/')}`}>
+          <NavLink to="/" className={({ isActive, }) =>
+            isActive ? 'active' : ''
+          }>
             Home
           </NavLink>
-          <NavLink to="/add" className={`header__link ${isActive('/add')}`}>
+          <NavLink to="/add"   className={({ isActive, }) =>
+            isActive ? 'active' : ''
+          }>
             Add
           </NavLink>
           <span className="separator"> | </span>
