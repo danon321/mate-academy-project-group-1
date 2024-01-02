@@ -3,8 +3,8 @@ import { z, ZodError } from 'zod';
 import { Button, TextField, Box } from '@mui/material';
 import { fullDate, PostType } from '../../types/post';
 import { randomId } from '../../utils/createId';
-// import { useDispatch } from 'react-redux';
-// import { addPost } from '../features/posts/post-slice';
+import { useDispatch } from 'react-redux';
+import { postSlice } from '../../app/redux/features/posts/post-slice';
 
 const schema = z.object({
   title: z
@@ -32,11 +32,11 @@ const AddUser: React.FC = () => {
   const [content, setContent] = useState('');
   const [titleError, setTitleError] = useState<string | null>(null);
   const [contentError, setContentError] = useState<string | null>(null);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const onSubmit = (data: PostType) => {
     console.log('Submitted data:', data);
-    // dispatchEvent(addPost(data));
+    dispatch(postSlice.actions.addPost(data));
   };
 
   const validateTitle = (value: string) => {
@@ -129,28 +129,3 @@ const AddUser: React.FC = () => {
 };
 
 export default AddUser;
-
-// export const postSlice = createSlice({
-//   name: 'posts',
-//   initialState,
-//   reducers: {
-//     addLike: (state, action: PayloadAction<string>) => {
-//       state.posts.forEach((post) => {
-//         if (post.id === action.payload) {
-//           post.likes += 1;
-//         }
-//       });
-//     },
-//     addDislike: (state, action: PayloadAction<string>) => {
-//       state.posts.forEach((post) => {
-//         if (post.id === action.payload) {
-//           post.dislikes += 1;
-//         }
-//       });
-//     },
-//     NOWY REDUCER
-// addPost: (state, action: PayloadAction<PostType>) => {
-//       state.posts.push(action.payload);
-//     },
-//   },
-// });

@@ -28,5 +28,8 @@ export const postSlice = createSlice({
         }
       });
     },
+    addPost: (state, action: PayloadAction<PostType>) => {
+      state.posts.push(action.payload);
+    },
   },
 });
