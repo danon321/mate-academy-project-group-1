@@ -1,10 +1,7 @@
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 15px;
-}
+@import '../../style/mixins/fonts.scss';
 
 .post {
+  font-family: 'Lora-Regular';
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -17,11 +14,12 @@
   .like-dislike-container {
     position: absolute;
     bottom: 10px;
-    left: 50%;
+    right: 0;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
   }
 
   .post-header {
@@ -33,6 +31,7 @@
     border-top-right-radius: 5px;
 
     h2 {
+      font-family: 'Lora-Bold';
       font-size: 1.4rem;
       margin-bottom: 8px;
     }
