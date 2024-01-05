@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { z, ZodError } from 'zod';
 import { Button, TextField, Box } from '@mui/material';
+import { fullDate, PostType } from '../../types/post';
+import { randomId } from '../../utils/createId';
+import { useDispatch } from 'react-redux';
+import { postSlice } from '../../app/redux/features/posts/post-slice';
 
 const schema = z.object({
   title: z
@@ -23,20 +27,17 @@ const schema = z.object({
     }),
 });
 
-export type FormData = {
-  title: string;
-  content: string;
-};
-
-type AddProps = {
-  onSubmit: (data: FormData) => void;
-};
-
-export const Add: React.FC<AddProps> = ({ onSubmit }: AddProps) => {
+const AddUser: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [titleError, setTitleError] = useState<string | null>(null);
   const [contentError, setContentError] = useState<string | null>(null);
+  const dispatch = useDispatch();
+
+  const onSubmit = (data: PostType) => {
+    console.log('Submitted data:', data);
+    dispatch(postSlice.actions.addPost(data));
+  };
 
   const validateTitle = (value: string) => {
     try {
@@ -62,11 +63,23 @@ export const Add: React.FC<AddProps> = ({ onSubmit }: AddProps) => {
 
   const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     validateTitle(title);
     validateContent(content);
 
     if (!titleError && !contentError) {
-      onSubmit({ title, content });
+      const todayDate = fullDate();
+      const newPostId = randomId(10);
+      onSubmit({
+        title,
+        content,
+        date: todayDate,
+        id: newPostId,
+        likes: 0,
+        dislikes: 0,
+      });
+      setContent('');
+      setTitle('');
     }
   };
 
@@ -114,3 +127,5 @@ export const Add: React.FC<AddProps> = ({ onSubmit }: AddProps) => {
     </div>
   );
 };
+
+export default AddUser;

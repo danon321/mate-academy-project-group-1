@@ -1,4 +1,4 @@
-import { initialPosts } from '../../InitialPosts/initialPosts';
+import { initialPosts } from '../../app/redux/data/initialPosts';
 import './home.scss';
 
 export const Home: React.FC = () => {
