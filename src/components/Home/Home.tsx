@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PostType } from '../../types/post';
 import { initialPosts } from '../../app/redux/data/initialPosts';
 import './home.scss';
+import ImageSlider from '../Slideshow/Slideshow';
 
 export const Home: React.FC = () => {
   const [posts, setPosts] = useState<PostType[]>(initialPosts);
@@ -72,7 +73,7 @@ export const Home: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>Our Blog Page</h1>
+      <ImageSlider />
       <div className="post-grid">
         {posts.map((post) => (
           <div key={post.id} className="post">
