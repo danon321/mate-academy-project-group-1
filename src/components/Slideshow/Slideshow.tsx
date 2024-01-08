@@ -17,47 +17,43 @@ const ImageSlider: React.FC = () => {
   const images: Slide[] = [
     {
       id: 1,
-      imageUrl: 'https://live.staticflickr.com/65535/50242715027_d4782382a1_b.jpg',
-      category: 'Vacations',
-      date: '08.08.2021',
+      imageUrl:
+        'https://images.pexels.com/photos/753994/pexels-photo-753994.jpeg?cs=srgb&dl=pexels-rakicevic-nenad-753994.jpg&fm=jpg',
+      category: 'Category 1',
+      date: '8 VIII 2013',
       title: 'Some title 1',
-      content: 'Skrócony opis posta 1',
+      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
     {
       id: 2,
-      imageUrl: 'https://images.unsplash.com/photo-1498078675142-85259d452c6b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG9jZWFuJTIwZnJvbSUyMGFib3ZlfGVufDB8fDB8fHww',
-      category: 'Beach',
-      date: '18.12.2019',
+      imageUrl:
+        'https://cdn.pixabay.com/photo/2015/08/28/11/27/space-911785_1280.jpg',
+      category: 'Category 2',
+      date: '18 XII 2019',
       title: 'Some title 2',
-      content: 'Skrócony opis posta 2',
+      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
     {
       id: 3,
-      imageUrl: 'https://e0.pxfuel.com/wallpapers/1022/49/desktop-wallpaper-dark-winter-dark-winter.jpg',
-      category: 'Winter',
-      date: '31.01.2018',
+      imageUrl:
+        'https://pxwall.com/wp-content/uploads/2019/04/4K-Dark-HD-Background.jpg',
+      category: 'Category 3',
+      date: '31 I 2018',
       title: 'Some title 3',
-      content: 'Skrócony opis posta 3',
+      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
     {
       id: 4,
-      imageUrl: 'https://pbs.twimg.com/media/FVTgEKcWAAIFlxC.jpg',
-      category: 'Cars',
-      date: '11.08.2011',
+      imageUrl: 'https://pxwall.com/wp-content/uploads/2019/04/4K-Dark-1080p-Wallpapers.jpg',
+      category: 'Category 4',
+      date: '11 VIII 2021',
       title: 'Some title 4',
-      content: 'Dłuższy tekst będzie się zawijał tylko w ramach trzeciej kolumny, data pozostaje na swoim miejscu',
+      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
   ];
 
   const sliderRef = useRef<Slider>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
-
-  const changeSlide = (index: number) => {
-    setCurrentSlide(index);
-    if (sliderRef.current) {
-      sliderRef.current.slickGoTo(index);
-    }
-  };
 
   const settings = {
     dots: false,
@@ -67,48 +63,56 @@ const ImageSlider: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
+    pauseOnHover: true,
     beforeChange: (prev: number, next: number) => setCurrentSlide(next),
   };
+
+  const changeSlide = (index: number) => {
+    setCurrentSlide(index);
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(index);
+    }
+  };
+
 
   return (
     <div className="image-slider">
       <Slider {...settings} ref={sliderRef} initialSlide={currentSlide}>
         {images.map((slide) => (
-          <div key={slide.id} className="slide">
-            <div style={{ position: 'relative' }}>
-              <img
-                src={slide.imageUrl}
-                alt={`Slide ${slide.id}`}
-                className='slide__image'
-              />
-              
-
-              <div className="slide__overlay">
-                <div className="slide__overlay__category">{slide.category}</div>
-                <div className="slide__overlay__title">{slide.title}</div>
-                <div className="slide__overlay__info">
-                  <div className="slide__overlay__info-date">{slide.date}</div>
-                  <div className="slide__overlay__info-dash"></div>
-                  <div className="slide__overlay__info-content">{slide.content}</div>
+          <div key={slide.id}>
+            
+            <div
+              className="slide"
+              style={{
+                backgroundImage: `url(${slide.imageUrl})`,
+              }}>
+              <div className="container">
+                <div className="slide__overlay">
+                  <div className="slide__overlay__category">{slide.category}</div>
+                  <div className="slide__overlay__title">{slide.title}</div>
+                  <div className="slide__overlay__date">{slide.date}</div>
+                  <div className="slide__overlay__text">{slide.content}</div>
                 </div>
-              </div>
 
+                <div className="indicators-container">
+                  {images.map((_, index) => (
+                    <span
+                      key={index}
+                      className={`${currentSlide === index ? 'active' : ''}`}
+                      onClick={() => changeSlide(index)}
+                    ></span>
+                  ))}
+                </div>
+
+              </div>
             </div>
+              
           </div>
         ))}
       </Slider>
-
-      <div className="indicators-container">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`${currentSlide === index ? 'active' : ''}`}
-            onClick={() => changeSlide(index)}
-          ></span>
-        ))}
-      </div>
     </div>
   );
 };
 
 export default ImageSlider;
+
