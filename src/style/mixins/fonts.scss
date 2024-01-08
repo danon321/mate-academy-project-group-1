@@ -1,0 +1,14 @@
+@mixin fontFace($fontName, $fontPath) {
+  @font-face {
+    font-family: #{$fontName};
+    src: url('#{$fontPath}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include fontFace('Spartan-Bold', '../fonts/Spartan-Bold');
+@include fontFace('Roboto-Bold', '../fonts/Roboto-Bold');
+@include fontFace('Roboto-Regular', '../fonts/Roboto-Regular');
+@include fontFace('Lora-Bold', '../fonts/Lora-Bold');
+@include fontFace('Lora-Regular', '../fonts/Lora-Regular');

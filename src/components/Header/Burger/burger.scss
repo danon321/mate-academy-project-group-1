@@ -1,0 +1,75 @@
+@import '../../../style/mixins/fonts.scss';
+
+body {
+  font-family: 'Roboto-Regular';
+}
+
+.burger-icon {
+  color: white;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.burger-drawer {
+  display: flex;
+  width: 75%;
+
+  .MuiDrawer-paper {
+    display: flex;
+    width: 75%;
+  }
+
+  .close-icon {
+    position: absolute;
+    right: 0;
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    padding-top: 10px;
+    z-index: 1000;
+  }
+}
+
+.profile-menu {
+  position: relative;
+  ul {
+    position: absolute;
+    left: -15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      list-style-type: none;
+
+      a {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        gap: 5px;
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.user {
+  position: relative;
+  &-icon {
+    position: absolute;
+    left: 100px;
+  }
+}
+
+.hidden {
+  display: none;
+}
