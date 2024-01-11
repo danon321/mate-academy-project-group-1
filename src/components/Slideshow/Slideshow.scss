@@ -2,27 +2,44 @@
   width: 100%;
 
   .slide {
+    position: relative;
     width: 100%;
     height: 600px;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      z-index: 1;
+    }
+
     background-size: cover;
     background-position: center;
   }
  
   .container {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px;
     justify-content: center;
     display: flex;
+    height: 100%;
 
     .slide__overlay {
-      margin-top: 8%;
       color: white;
       border-radius: 5px;
       white-space: pre-wrap;
       display: flex;
       flex-direction: column;
       width: 100%;
+      height: 100%;
+      justify-content: center;
 
       &__category {
         background: rgba(0, 0, 0, 0.6);

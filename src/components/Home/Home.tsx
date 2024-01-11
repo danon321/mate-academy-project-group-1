@@ -11,9 +11,9 @@ export const Home: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <>
       <ImageSlider />
-      <div className="post-grid">
+      <div className="post-grid container">
         {initialPosts.map((post) => (
           <div key={post.id} className="post">
             <div className="post-header">
@@ -31,6 +31,6 @@ export const Home: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };

@@ -64,6 +64,7 @@ const ImageSlider: React.FC = () => {
     slidesToScroll: 1,
     fade: true,
     pauseOnHover: true,
+    useCSS: true,
     beforeChange: (prev: number, next: number) => setCurrentSlide(next),
   };
 
