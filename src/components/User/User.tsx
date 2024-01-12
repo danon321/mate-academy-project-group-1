@@ -5,7 +5,9 @@ import { useParams } from 'react-router-dom';
 
 const User = () => {
   const { id } = useParams();
-  const user = useUserSelector((state) => state.users.users.find(user => user.id === id));
+  const user = useUserSelector((state) =>
+    state.users.users.find((user) => user.id === id)
+  );
   return (
     <div className="container">
       <div className="background">
@@ -35,9 +37,7 @@ const User = () => {
         </div>
         <div className="about">
           <h2>About</h2>
-          <p className="about__content">
-            {user?.description}
-          </p>
+          <p className="about__content">{user?.description}</p>
         </div>
       </div>
       <div className="photo">
