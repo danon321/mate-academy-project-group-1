@@ -123,3 +123,51 @@ a {
 .icons {
   grid-area: icons;
 }
+
+@media (max-width: 380px) {
+  .footer {
+    height: 470px;
+    &__grid {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(14, 15px);
+      row-gap: 16px;
+      grid-template-areas:
+        'item1'   
+        'mail'   
+        'phone'   
+        'item2'
+        'job'
+        'about'
+        'partners'
+        'advertise'
+        'member'
+        'item3'
+        'address'
+        'address'
+        'item4'
+        'icons';
+      font-family: Lora;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 25px;
+      padding: 20px 16px;
+    }
+
+    &__bottom {
+      &__display {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .item {
+    padding: 5px 0;
+  }
+}
+
+
