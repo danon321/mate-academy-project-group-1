@@ -1,7 +1,4 @@
-.page {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 15px;
+.container {
   position: relative;
   height: 300px;
   border-bottom-left-radius: 10px;
@@ -96,7 +93,7 @@
 
 .about {
   width: 60%;
-  padding: 5px;
+  padding: 5px 5px 5px 20px;
 
   &__content {
     font-size: small;
