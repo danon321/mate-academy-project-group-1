@@ -3,6 +3,7 @@ import { initialPosts } from '../../app/redux/data/initialPosts';
 import { HomePost } from '../HomePost/HomePost';
 import { SkeletonHomePost } from '../States/Skeleton/SkeletonHomePost';
 import './home.scss';
+import ImageSlider from '../Slideshow/Slideshow';
 import { Error } from '../States/Error/Error';
 
 export const Home: React.FC = () => {
@@ -17,20 +18,24 @@ export const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="post-grid">
-        {!error ? (
-          initialPosts.map((post) => {
-            return (
-              (loading && <SkeletonHomePost key={post.id} />) || (
-                <HomePost key={post.id} post={post} />
-              )
-            );
-          })
-        ) : (
-          <Error />
-        )}
+    <>
+      <ImageSlider />
+      <div className="container">
+        <div className="post-grid">
+          {!error ? (
+            initialPosts.map((post) => {
+              return (
+                (loading && <SkeletonHomePost key={post.id} />) || (
+                  <HomePost key={post.id} post={post} />
+                )
+              );
+            })
+          ) : (
+            <Error />
+          )}
+        </div>
       </div>
-    </div>
+    </>
+    
   );
 };
