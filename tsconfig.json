@@ -18,7 +18,5 @@
   },
   "include": [
     "src",
-    "src/content",
-    "public/static/images/posts/redux/data/InitialPosts"
   ]
 }

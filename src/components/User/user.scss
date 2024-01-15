@@ -1,0 +1,117 @@
+.container {
+  position: relative;
+  height: 300px;
+  border-bottom-left-radius: 10px;
+}
+
+.background {
+  width: 100%;
+  height: 30%;
+  position: relative;
+
+  &__landscape {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__motto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px 15px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: medium;
+    font-style: italic;
+  }
+}
+
+.info {
+  background-color: #2ecc71;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.details {
+  margin: 0;
+  width: 40%;
+
+  border-right: 1px solid black;
+  background-color: #48e188;
+  padding-top: 40px;
+  border-bottom-left-radius: 10px;
+
+  &__datacontent {
+    height: 60%;
+  }
+
+  &__data {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+
+  &__datacounter {
+    display: flex;
+    border-top: 1px solid black;
+    border-right: none;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+  }
+
+  &__counter {
+    width: 33.33%;
+    height: 100%;
+    border-right: 1px solid black;
+    text-align: center;
+
+    &:first-child {
+      border-bottom-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    padding-top: 20px;
+  }
+
+  &__number {
+    margin: 0;
+    font-size: x-small;
+  }
+}
+
+.about {
+  width: 60%;
+  padding: 5px 5px 5px 20px;
+
+  &__content {
+    font-size: small;
+  }
+}
+
+.photo {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+
+  &__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
