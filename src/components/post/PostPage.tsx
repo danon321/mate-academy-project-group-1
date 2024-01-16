@@ -2,25 +2,17 @@ import './postPage.scss';
 
 import { useParams } from 'react-router';
 import { usePostSelector } from '../../app/redux/hooks/hooks';
-import { useState } from 'react';
+// import { useState } from 'react';
 import {
-  Card,
   CardHeader,
-  CardContent,
-  CardActions,
   Avatar,
   IconButton,
-  Typography,
   Box,
 } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Like } from '../Likes';
-import React from 'react';
+// import { Like } from '../Likes';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -28,61 +20,53 @@ export const PostPage = () => {
     state.posts.posts.find((post) => post.id === id)
   );
 
-  const [like, setLike] = useState<boolean | undefined>(undefined);
+  // const [like, setLike] = useState<boolean | undefined>(undefined);
 
   return (
     <>
-      <Box className="box-page">
-        <Card className="container" sx={{ maxWidth: 1000 }}>
-          <CardHeader
-            avatar={
-              <Avatar
-                alt="Jennifer Lawrence"
-                src="/static/images/posts/jennifer_lawrence.svg"
-                sx={{ width: 56, height: 56 }}
-              />
-            }
-            subheader="Jennifer Lawrence"
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
+      <div className="box-page">
+        <div className='post__picture'>
+          <div className='post__picture-textbox'>
+            <h1 className='post__picture-title'>{post?.title}</h1>
+          </div>
+        </div>
+        <div className="container">
+          <span className="span-date">{post?.date}</span>
+          <article className="content">
+            {post?.content}
+          </article>
+          <div className='content-tags'>
+            <div className='content-tags__single'>ADVENTURE</div>
+            <div className='content-tags__single'>PHOTO</div>
+            <div className='content-tags__single'>DESIGN</div>
+          </div>
+          <div className='separator'></div>
+          <div className="display-between">
+            <CardHeader
+              avatar={
+                <Avatar
+                  alt="Jennifer Lawrence"
+                  src="/static/images/posts/jennifer_lawrence.svg"
+                  sx={{ width: 56, height: 56 }}
+                />
+              }
+              subheader="Jennifer Lawrence"
+            />
+            {/* <Like like={like} setLike={setLike} /> */}
+            <Box>
+              <IconButton>
+                <FacebookSharpIcon />
               </IconButton>
-            }
-          />
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
-          </CardActions>
-          <CardContent>
-            <Typography paragraph className="title" align="center" variant="h4">
-              {post?.title}
-            </Typography>
-            <Typography paragraph align="left">
-              {post?.content}
-            </Typography>
-            <Typography paragraph sx={{ maxWidth: 860 }}></Typography>
-            <Box className="display-between">
-              <span className="span-date">{post?.date}</span>
-              <Like like={like} setLike={setLike} />
-              <Box>
-                <IconButton>
-                  <FacebookSharpIcon />
-                </IconButton>
-                <IconButton>
-                  <TwitterIcon />
-                </IconButton>
-                <IconButton>
-                  <YouTubeIcon />
-                </IconButton>
-              </Box>
+              <IconButton>
+                <TwitterIcon />
+              </IconButton>
+              <IconButton>
+                <YouTubeIcon />
+              </IconButton>
             </Box>
-          </CardContent>
-        </Card>
-      </Box>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
