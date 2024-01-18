@@ -4,37 +4,39 @@ body {
   font-family: 'Roboto-Regular';
 }
 
-.burger-icon {
-  color: white;
-}
-
 .nav-link {
   text-decoration: none;
   color: black;
 }
 
-.burger-drawer {
-  display: flex;
-  width: 75%;
-
-  .MuiDrawer-paper {
-    display: flex;
-    width: 75%;
+.burger {
+  &__icon {
+    color: white;
   }
 
-  .close-icon {
-    position: absolute;
-    right: 0;
-    color: black;
+  &__drawer {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    padding-top: 10px;
-    z-index: 1000;
+    width: 75%;
+
+    .MuiDrawer-paper {
+      display: flex;
+      width: 75%;
+    }
+
+    .close-icon {
+      position: absolute;
+      right: 0;
+      color: black;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px;
+      padding-top: 10px;
+      z-index: 1000;
+    }
   }
 }
 
-.profile-menu {
+.profile__menu {
   position: relative;
   ul {
     position: absolute;
@@ -64,12 +66,12 @@ body {
 
 .user {
   position: relative;
-  &-icon {
+  &__icon {
     position: absolute;
     left: 100px;
-  }
-}
 
-.hidden {
-  display: none;
+    &--open {
+      transform: rotate(90deg);
+    }
+  }
 }
