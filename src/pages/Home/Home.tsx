@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { initialPosts } from '../../app/redux/data/initialPosts';
-import { HomePost } from '../HomePost/HomePost';
-import { SkeletonHomePost } from '../States/Skeleton/SkeletonHomePost';
+import { HomePost } from '../../components/HomePost/HomePost';
+import { SkeletonHomePost } from '../../components/States/Skeleton/SkeletonHomePost';
 import './home.scss';
-import ImageSlider from '../Slideshow/Slideshow';
-import { Error } from '../States/Error/Error';
+import ImageSlider from '../../components/Slideshow/Slideshow';
+import { Error } from '../../components/States/Error/Error';
 
 export const Home: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -36,6 +36,5 @@ export const Home: React.FC = () => {
         </div>
       </div>
     </>
-    
   );
 };
