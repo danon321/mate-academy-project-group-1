@@ -9,7 +9,7 @@ const User = () => {
     state.users.users.find((user) => user.id === id)
   );
   return (
-    <div className="container">
+    <div className="container user">
       <div className="background">
         <img src={user?.background} className="background__landscape" />
         <h1 className="background__motto">{user?.motto}</h1>
