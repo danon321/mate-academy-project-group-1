@@ -19,7 +19,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Like } from '../Likes';
+import { Like } from '../../utils/Likes';
 import React from 'react';
 
 export const PostPage = () => {
