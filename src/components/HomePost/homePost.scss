@@ -66,17 +66,28 @@
   width: 48px;
   border-radius: 50%;
 
-  &-container {
-    display: flex;
+  &__grid {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: 18px 18px;
+    grid-template-areas:
+      'photo text1'
+      'photo text2';
+    padding: 20px 0;
+    column-gap: 10px;
     align-items: center;
   }
 
-  &-img {
-    padding: 20px 0;
+  &__img {
+    grid-area: photo;
   }
 
-  &-name {
-    margin-left: 20px;
+  &__name {
+    grid-area: text1;
+  }
+
+  &__title {
+    grid-area: text2;
   }
 }
 
@@ -84,5 +95,4 @@
   height: 48px;
   width: 48px;
   border-radius: 50%;
-  background-color: #888;
 }

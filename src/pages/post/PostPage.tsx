@@ -20,12 +20,11 @@ import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Like } from '../../utils/Likes';
-import React from 'react';
 
 export const PostPage = () => {
   const { id } = useParams();
   const post = usePostSelector((state) =>
-    state.posts.posts.find((post) => post.id === id)
+    state.posts.posts.find((post) => post.id === Number(id))
   );
 
   const [like, setLike] = useState<boolean | undefined>(undefined);
@@ -66,7 +65,7 @@ export const PostPage = () => {
             </Typography>
             <Typography paragraph sx={{ maxWidth: 860 }}></Typography>
             <Box className="display-between">
-              <span className="span-date">{post?.date}</span>
+              <span className="span-date">{post?.date.toString()}</span>
               <Like like={like} setLike={setLike} />
               <Box>
                 <IconButton>

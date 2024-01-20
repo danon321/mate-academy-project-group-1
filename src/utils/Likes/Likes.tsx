@@ -15,19 +15,20 @@ type Props = {
 
 export const Like: React.FC<Props> = ({ like, setLike }: Props) => {
   const { id } = useParams();
+  const postId = Number(id);
   const post = usePostSelector((state) =>
-    state.posts.posts.find((post) => post.id === id)
+    state.posts.posts.find((post) => post.id === postId)
   );
   const dispatch = useDispatch();
 
-  const addLike = (id: string) => {
+  const addLike = (postId: number) => {
     setLike(!like);
-    dispatch(postSlice.actions.addLike(id));
+    dispatch(postSlice.actions.addLike(postId));
   };
 
-  const addDislike = (id: string) => {
+  const addDislike = (postId: number) => {
     setLike(false);
-    dispatch(postSlice.actions.addDislike(id));
+    dispatch(postSlice.actions.addDislike(postId));
   };
 
   return (

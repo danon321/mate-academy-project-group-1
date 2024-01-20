@@ -32,17 +32,15 @@ export const SkeletonHomePost = () => {
             <Skeleton animation={animation} width="50%" className="read-more" />
           </a>
         </div>
-        <div className="avatar-container">
-          <div className="avatar-img">
-            <Skeleton variant="circular" width={48} height={48} />
-          </div>
-          <div>
-            <Skeleton
-              animation={animation}
-              className="avatar-name"
-              width="300%"
-            />
-          </div>
+        <div className="avatar__grid">
+          <Skeleton
+            variant="circular"
+            width={48}
+            height={48}
+            className="avatar__img"
+          />
+          <Skeleton animation={animation} className="avatar__name" />
+          <Skeleton animation={animation} className="avatar__title" />
         </div>
       </div>
     </div>
