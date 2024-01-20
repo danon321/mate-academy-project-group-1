@@ -1,8 +1,9 @@
+import { Post } from '../../types/post';
+import { fullDate } from '../../utils/date/date';
 import './homePost.scss';
-import { PostType } from '../../types/post';
 
 type Props = {
-  post: PostType;
+  post: Post;
 };
 
 export const HomePost: React.FC<Props> = ({ post }: Props) => {
@@ -24,7 +25,7 @@ export const HomePost: React.FC<Props> = ({ post }: Props) => {
       </div>
       <div className="post-section">
         <div className="post-date">
-          <p>{post.date}</p>
+          <p>{fullDate(post?.date)}</p>
         </div>
         <div className="post-title">
           <h2>{limitContent(post.title, 50)}</h2>
@@ -35,18 +36,14 @@ export const HomePost: React.FC<Props> = ({ post }: Props) => {
             Czytaj więcej...
           </a>
         </div>
-        <div className="avatar-container">
-          <div className="avatar-img">
-            <img
-              className="img"
-              src="/static/images/posts/fotoAvatar.svg"
-              alt="P"
-            />
-          </div>
-
-          <div>
-            <h5 className="avatar-name">Avatar name</h5>
-          </div>
+        <div className="avatar__grid">
+          <img
+            className="avatar__img"
+            src="/static/images/posts/fotoAvatar.svg"
+            alt="P"
+          />
+          <h5 className="avatar__name">{`${post.user.name} ${post.user.surname}`}</h5>
+          <h5 className="avatar__title">{post.user.title}</h5>
         </div>
       </div>
     </div>
