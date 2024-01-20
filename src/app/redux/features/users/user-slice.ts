@@ -1,13 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserType } from '../../../../types/user';
-import { initialUsers as users } from '../../data/initialUsers';
+import { User } from '../../../../types/user';
 
 type State = {
-  users: UserType[];
+  users: User[];
 };
 
 const initialState: State = {
-  users,
+  users: [],
 };
 
 export const userSlice = createSlice({
