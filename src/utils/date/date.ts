@@ -41,7 +41,6 @@ export const fullDate = (time: Date) => {
   for (const key in months) {
     if (Number(key) === numberMonth) {
       nameMonth = months[Number(key)];
-      console.log(nameMonth);
     }
   }
 
