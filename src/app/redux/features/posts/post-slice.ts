@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Post } from '../../../../types/post';
-import { fetchPost } from '../../../../api/services/fetchPost';
+import { fetchPosts } from '../../../../api/services/fetchPost';
 
 type State = {
   isLoading: boolean;
@@ -37,17 +37,17 @@ export const postSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchPost.pending, (state) => {
+    builder.addCase(fetchPosts.pending, (state) => {
       state.isLoading = true;
     });
     builder.addCase(
-      fetchPost.fulfilled,
+      fetchPosts.fulfilled,
       (state, action: PayloadAction<Post[]>) => {
         state.posts = action.payload;
         state.isLoading = false;
       }
     );
-    builder.addCase(fetchPost.rejected, (state) => {
+    builder.addCase(fetchPosts.rejected, (state) => {
       state.error = true;
     });
   },

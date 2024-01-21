@@ -5,7 +5,7 @@ import { Error } from '../../components/States/Error/Error';
 import { useAppDispatch, usePostSelector } from '../../app/redux/hooks/hooks';
 import { SkeletonHomePost } from '../../components/States/Skeleton/SkeletonHomePost';
 import { useEffect } from 'react';
-import { fetchPost } from '../../api/services/fetchPost';
+import { fetchPosts } from '../../api/services/fetchPost';
 
 export const Home: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
 
   useEffect(() => {
     const dataLoading = async () => {
-      const posts = await fetchPost();
+      const posts = await fetchPosts();
       dispatch(posts);
     };
 
