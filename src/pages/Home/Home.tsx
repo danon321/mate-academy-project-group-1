@@ -8,8 +8,16 @@ import { useEffect } from 'react';
 import { fetchPosts } from '../../api/services/fetchPost';
 
 export const Home: React.FC = () => {
-  const dispatch = useAppDispatch();
   const data = usePostSelector((state) => state.posts);
+  const dispatch = useAppDispatch();
+
+  const getCount = () => {
+    const count = [];
+    for (let i = 0; i < 8; i++) {
+      count.push(i);
+    }
+    return count;
+  };
 
   useEffect(() => {
     const dataLoading = async () => {
@@ -25,12 +33,14 @@ export const Home: React.FC = () => {
       <ImageSlider />
       <div className="container">
         <div className="post-grid">
-          {!data.error ? (
+          {data.posts.length === 0 ? (
+            getCount().map((count) => {
+              return <SkeletonHomePost key={count} />;
+            })
+          ) : !data.error ? (
             data.posts.map((post) => {
               return (
-                (data.isLoading && <SkeletonHomePost key={post.id} />) || (
-                  <HomePost key={post.id} post={post} />
-                )
+                <HomePost key={post.id} post={post} />
               );
             })
           ) : (
