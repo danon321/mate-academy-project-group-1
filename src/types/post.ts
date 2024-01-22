@@ -1,20 +1,12 @@
-export const fullDate = () => {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const hour = date.getHours();
-  const minutes = date.getMinutes();
-  const result = `${year}.${month}.${day} time: ${hour}:${minutes}`;
+import { User } from './user';
 
-  return result;
-};
-
-export interface PostType {
-  id: string;
+export type Post = {
+  id: number;
   title: string;
   content: string;
   likes: number;
   dislikes: number;
-  date: string;
-}
+  date: Date;
+  image: string | null;
+  user: User;
+};

@@ -1,20 +1,31 @@
-import { useEffect, useState } from 'react';
-import { initialPosts } from '../../app/redux/data/initialPosts';
 import { HomePost } from '../../components/HomePost/HomePost';
-import { SkeletonHomePost } from '../../components/States/Skeleton/SkeletonHomePost';
 import './home.scss';
 import ImageSlider from '../../components/Slideshow/Slideshow';
 import { Error } from '../../components/States/Error/Error';
+import { useAppDispatch, usePostSelector } from '../../app/redux/hooks/hooks';
+import { SkeletonHomePost } from '../../components/States/Skeleton/SkeletonHomePost';
+import { useEffect } from 'react';
+import { fetchPosts } from '../../api/services/fetchPost';
 
 export const Home: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
+  const data = usePostSelector((state) => state.posts);
+  const dispatch = useAppDispatch();
+
+  const getCount = () => {
+    const count = [];
+    for (let i = 0; i < 8; i++) {
+      count.push(i);
+    }
+    return count;
+  };
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      // setError(true);
-    }, 1500);
+    const dataLoading = async () => {
+      const posts = await fetchPosts();
+      dispatch(posts);
+    };
+
+    dataLoading();
   }, []);
 
   return (
@@ -22,12 +33,14 @@ export const Home: React.FC = () => {
       <ImageSlider />
       <div className="container">
         <div className="post-grid">
-          {!error ? (
-            initialPosts.map((post) => {
+          {data.posts.length === 0 ? (
+            getCount().map((count) => {
+              return <SkeletonHomePost key={count} />;
+            })
+          ) : !data.error ? (
+            data.posts.map((post) => {
               return (
-                (loading && <SkeletonHomePost key={post.id} />) || (
-                  <HomePost key={post.id} post={post} />
-                )
+                <HomePost key={post.id} post={post} />
               );
             })
           ) : (

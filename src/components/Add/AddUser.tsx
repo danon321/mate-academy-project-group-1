@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { z, ZodError } from 'zod';
 import { Button, TextField, Box } from '@mui/material';
-import { fullDate, PostType } from '../../types/post';
+import { Post } from '../../types/post';
 import { randomId } from '../../utils/createId';
 import { useDispatch } from 'react-redux';
 import { postSlice } from '../../app/redux/features/posts/post-slice';
@@ -34,7 +34,7 @@ const AddUser: React.FC = () => {
   const [contentError, setContentError] = useState<string | null>(null);
   const dispatch = useDispatch();
 
-  const onSubmit = (data: PostType) => {
+  const onSubmit = (data: Post) => {
     console.log('Submitted data:', data);
     dispatch(postSlice.actions.addPost(data));
   };
@@ -68,16 +68,16 @@ const AddUser: React.FC = () => {
     validateContent(content);
 
     if (!titleError && !contentError) {
-      const todayDate = fullDate();
-      const newPostId = randomId(10);
-      onSubmit({
-        title,
-        content,
-        date: todayDate,
-        id: newPostId,
-        likes: 0,
-        dislikes: 0,
-      });
+      // const todayDate = fullDate();
+      // const newPostId = randomId(10);
+      // onSubmit({
+      //   title,
+      //   content,
+      //   date: todayDate,
+      //   id: newPostId,
+      //   likes: 0,
+      //   dislikes: 0,
+      // });
       setContent('');
       setTitle('');
     }
