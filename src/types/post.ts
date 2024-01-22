@@ -1,4 +1,5 @@
-import { User } from './user';
+import { User } from "./user";
+
 
 export type Post = {
   id: number;
@@ -8,5 +9,6 @@ export type Post = {
   dislikes: number;
   date: Date;
   image: string | null;
+  // userId: number;
   user: User;
 };
