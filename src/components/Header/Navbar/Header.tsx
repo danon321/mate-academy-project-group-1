@@ -99,19 +99,19 @@ const Header = () => {
                 <ul>
                   <li>
                     <Person2Icon className="profile-menu__icon" />
-                    <NavLink to="/user-profile" onClick={handleMouseLeave}>
+                    <NavLink to="/users/2" onClick={handleMouseLeave}>
                       Profil
                     </NavLink>
                   </li>
                   <li>
                     <PermMediaIcon className="profile-menu__icon" />
-                    <NavLink to="/user-posts" onClick={handleMouseLeave}>
+                    <NavLink to="/users/posts" onClick={handleMouseLeave}>
                       Posty
                     </NavLink>
                   </li>
                   <li>
                     <SettingsIcon className="profile-menu__icon" />
-                    <NavLink to="/user-settings" onClick={handleMouseLeave}>
+                    <NavLink to="/users/settings" onClick={handleMouseLeave}>
                       Ustawienia
                     </NavLink>
                   </li>
