@@ -1,14 +1,17 @@
 .user {
   position: relative;
   height: 300px;
-  border-bottom-left-radius: 10px;
-  margin-top: 70px;
+  border-radius: 10px;
+  margin-top: 90px;
+  margin-bottom: 20px;
 }
 
 .background {
   width: 100%;
   height: 30%;
   position: relative;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
   &__landscape {
     width: 100%;
@@ -53,9 +56,11 @@
   }
 
   &__data {
-    text-align: center;
     padding: 10px;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__datacounter {
@@ -84,17 +89,23 @@
   &__name {
     margin: 0;
     padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__number {
     margin: 0;
     font-size: x-small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .about {
   width: 60%;
-  padding: 5px 5px 5px 20px;
+  padding: 5px 20px;
 
   &__content {
     font-size: small;
@@ -107,7 +118,8 @@
   left: 50px;
   width: 100px;
   height: 100px;
-  z-index: 1;
+  z-index: 3;
+  opacity: 100%;
 
   &__avatar {
     width: 100%;

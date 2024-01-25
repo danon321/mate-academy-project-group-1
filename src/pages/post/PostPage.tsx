@@ -20,6 +20,7 @@ import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Like } from '../../utils/Likes';
+import { Link } from 'react-router-dom';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -33,7 +34,7 @@ export const PostPage = () => {
     <>
       <Box className="box-page">
         <Card className="container" sx={{ maxWidth: 1000 }}>
-          <CardHeader
+          <Link to="/users/2"><CardHeader
             avatar={
               <Avatar
                 alt="Jennifer Lawrence"
@@ -47,7 +48,7 @@ export const PostPage = () => {
                 <MoreVertIcon />
               </IconButton>
             }
-          />
+          /></Link>
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
               <FavoriteIcon />
