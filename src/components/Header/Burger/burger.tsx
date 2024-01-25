@@ -14,7 +14,6 @@ import PermMediaIcon from '@mui/icons-material/PermMedia';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
-import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import './burger.scss';
 
 const Burger: React.FC = () => {
@@ -72,16 +71,13 @@ const Burger: React.FC = () => {
         <ListItemButton>
           <ListItemText className="user" primary="Użytkownik" />
           <KeyboardArrowRightOutlinedIcon
-            className={`user-icon ${isProfileOpen ? 'hidden' : ''}`}
-          />
-          <KeyboardArrowDownOutlinedIcon
-            className={`user-icon ${isProfileOpen ? '' : 'hidden'}`}
+            className={`user__icon ${isProfileOpen ? 'user__icon--open' : ''}`}
           />
         </ListItemButton>
         {isProfileOpen && (
           <div
-            className={`profile-menu ${
-              isProfileOpen ? 'profile-menu__open' : ''
+            className={`profile__menu ${
+              isProfileOpen ? 'profile__menu--open' : ''
             }`}
           >
             <ul>
@@ -119,13 +115,13 @@ const Burger: React.FC = () => {
   return (
     <div>
       <IconButton onClick={toggleDrawer(true)}>
-        <MenuIcon className="burger-icon" />
+        <MenuIcon className="burger__icon" />
       </IconButton>
       <Drawer
         anchor="right"
         open={isOpen}
         onClose={toggleDrawer(false)}
-        className="burger-drawer"
+        className="burger__drawer"
       >
         <div className="close-icon">
           <IconButton onClick={toggleDrawer(false)}>

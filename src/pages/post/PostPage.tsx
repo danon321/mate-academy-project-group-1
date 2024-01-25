@@ -12,12 +12,12 @@ import {
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-// import { Like } from '../Likes';
+// import { Like } from '../../utils/Likes';
 
 export const PostPage = () => {
   const { id } = useParams();
   const post = usePostSelector((state) =>
-    state.posts.posts.find((post) => post.id === id)
+    state.posts.posts.find((post) => post.id === Number(id))
   );
 
   // const [like, setLike] = useState<boolean | undefined>(undefined);
@@ -31,7 +31,7 @@ export const PostPage = () => {
           </div>
         </div>
         <div className="container">
-          <span className="span-date">{post?.date}</span>
+          <span className="span-date">{post?.date.toString()}</span>
           <article className="content">
             {post?.content}
           </article>

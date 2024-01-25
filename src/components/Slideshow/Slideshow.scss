@@ -1,0 +1,99 @@
+.image-slider {
+  width: 100%;
+
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      z-index: 1;
+    }
+
+    background-size: cover;
+    background-position: center;
+  }
+ 
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+
+    .slide__overlay {
+      color: white;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+
+      &__category {
+        background: rgba(0, 0, 0, 0.6);
+        font-size: 15px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 8px;
+        margin: 0 auto;
+      }
+ 
+      &__title {
+        font-size: 36px;
+        font-weight: bold;
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+      }
+
+      &__date {
+        font-size: 12px;
+        font-weight: 400;
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+      }
+
+      &__text {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .indicators-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 100px;
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    
+    span {
+      margin: 0 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: gray;
+      cursor: pointer;
+    
+      &.active {
+        background: white;
+      }
+    }
+  }
+}

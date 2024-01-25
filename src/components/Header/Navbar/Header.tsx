@@ -1,4 +1,4 @@
-import React, { useEffect, useState, } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Burger from '../Burger/burger';
 import Person2Icon from '@mui/icons-material/Person2';
@@ -39,34 +39,55 @@ const Header = () => {
     <header className={`header ${isVisible ? '' : 'header--hidden'}`}>
       <nav className="navbar container">
         <div className="navbar__left">BLOG</div>
-        <div className='burger'>
+        <div className="burger">
           <Burger />
         </div>
         <div className="navbar__right">
-          <div className='header-links'>
-            <NavLink to="/" className={({ isActive }) =>
-              isActive ? 'activeLink header-links__link' : 'header-links__link'
-            }>
-            Home
+          <div className="header-links">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? 'activeLink header-links__link'
+                  : 'header-links__link'
+              }
+            >
+              Home
             </NavLink>
-            <NavLink to="/about-us" className={({ isActive }) =>
-              isActive ? 'activeLink header-links__link' : 'header-links__link'
-            }>
-            O nas
+            <NavLink
+              to="/about-us"
+              className={({ isActive }) =>
+                isActive
+                  ? 'activeLink header-links__link'
+                  : 'header-links__link'
+              }
+            >
+              O nas
             </NavLink>
-            <NavLink to="/articles" className={({ isActive }) =>
-              isActive ? 'activeLink header-links__link' : 'header-links__link'
-            }>
-            Artykuły
+            <NavLink
+              to="/articles"
+              className={({ isActive }) =>
+                isActive
+                  ? 'activeLink header-links__link'
+                  : 'header-links__link'
+              }
+            >
+              Artykuły
             </NavLink>
-            <NavLink to="/add" className={({ isActive }) =>
-              isActive ? 'activeLink header-links__link' : 'header-links__link'
-            }>
-            Postuj
+            <NavLink
+              to="/add"
+              className={({ isActive }) =>
+                isActive
+                  ? 'activeLink header-links__link'
+                  : 'header-links__link'
+              }
+            >
+              Postuj
             </NavLink>
           </div>
           <span className="separator"></span>
-          <div className="profile-wrapper"
+          <div
+            className="profile-wrapper"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -77,20 +98,28 @@ const Header = () => {
               <div className="profile-menu">
                 <ul>
                   <li>
-                    <Person2Icon className='profile-menu__icon'/>
-                    <NavLink to="/user-profile" onClick={handleMouseLeave}>Profil</NavLink>
+                    <Person2Icon className="profile-menu__icon" />
+                    <NavLink to="/user-profile" onClick={handleMouseLeave}>
+                      Profil
+                    </NavLink>
                   </li>
                   <li>
-                    <PermMediaIcon className='profile-menu__icon'/>
-                    <NavLink to="/user-posts" onClick={handleMouseLeave}>Posty</NavLink>
+                    <PermMediaIcon className="profile-menu__icon" />
+                    <NavLink to="/user-posts" onClick={handleMouseLeave}>
+                      Posty
+                    </NavLink>
                   </li>
                   <li>
-                    <SettingsIcon className='profile-menu__icon'/>
-                    <NavLink to="/user-settings" onClick={handleMouseLeave}>Ustawienia</NavLink>
+                    <SettingsIcon className="profile-menu__icon" />
+                    <NavLink to="/user-settings" onClick={handleMouseLeave}>
+                      Ustawienia
+                    </NavLink>
                   </li>
                   <li>
-                    <LogoutIcon className='profile-menu__icon'/>
-                    <NavLink to="/" onClick={handleMouseLeave}>Wyloguj</NavLink>
+                    <LogoutIcon className="profile-menu__icon" />
+                    <NavLink to="/" onClick={handleMouseLeave}>
+                      Wyloguj
+                    </NavLink>
                   </li>
                 </ul>
               </div>
