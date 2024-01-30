@@ -1,0 +1,39 @@
+.notFound {
+  display: flex;
+  margin: 70px 0 20px 200px;
+  justify-content: space-between;
+
+  &__text {
+    flex: 60%;
+
+    &-error {
+      font-size: 6rem;
+      display: flex;
+      justify-content: left;
+    }
+
+    &-info {
+      font-size: medium;
+      display: flex;
+      justify-content: left;
+    }
+
+    &-backToMain {
+      display: flex;
+      justify-content: left;
+
+      &-link {
+        text-align: center;
+        padding: 5px 15px;
+        color: white;
+        background-color: gray;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__emoji {
+    flex: 40%;
+    padding-right: 100px;
+  }
+}
