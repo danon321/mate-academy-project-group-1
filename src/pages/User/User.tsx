@@ -25,7 +25,7 @@ const User = () => {
       {(loading && <SkeletonUser />) || (
         <div className="container user">
           <div className="background">
-            <img src={user?.background} className="background__landscape" />
+            <img src="" className="background__landscape" />
             <h1 className="background__motto">{/*user?.motto */}</h1>
           </div>
           <div className="info">
@@ -55,7 +55,7 @@ const User = () => {
             </div>
           </div>
           <div className="photo">
-            <img src=""{/* user?.avatar */} className="photo__avatar" />
+            <img src="" className="photo__avatar" />
           </div>
         </div>) 
       }
