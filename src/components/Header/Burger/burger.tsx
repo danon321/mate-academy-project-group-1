@@ -69,9 +69,9 @@ const Burger: React.FC = () => {
       </NavLink>
       <div className="nav-link" onClick={handleMouseClick}>
         <ListItemButton>
-          <ListItemText className="user" primary="Użytkownik" />
+          <ListItemText className="burger-user" primary="Użytkownik" />
           <KeyboardArrowRightOutlinedIcon
-            className={`user__icon ${isProfileOpen ? 'user__icon--open' : ''}`}
+            className={`burger-user__icon ${isProfileOpen ? 'burger-user__icon--open' : ''}`}
           />
         </ListItemButton>
         {isProfileOpen && (
@@ -82,19 +82,19 @@ const Burger: React.FC = () => {
           >
             <ul>
               <li>
-                <NavLink to="/user-profile" onClick={toggleDrawer(false)}>
+                <NavLink to="/users/2" onClick={toggleDrawer(false)}>
                   <Person2Icon />
                   Profil
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/user-posts" onClick={toggleDrawer(false)}>
+                <NavLink to="/users/posts" onClick={toggleDrawer(false)}>
                   <PermMediaIcon />
                   Posty
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/user-settings" onClick={toggleDrawer(false)}>
+                <NavLink to="/users/settings" onClick={toggleDrawer(false)}>
                   <SettingsIcon />
                   Ustawienia
                 </NavLink>
