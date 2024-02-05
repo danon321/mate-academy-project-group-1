@@ -1,0 +1,40 @@
+.relatedPosts {
+  min-height: 625px;
+  background-color: #e5e5e54d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title {
+    color: #495057;
+    font-family: Lora;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    display: flex;
+    align-items: flex-start;
+    height: 50px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 420px);
+    grid-template-rows: 50px 280px;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 1329px) {
+  .relatedPosts {
+    padding: 50px 0;
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 420px);
+      grid-template-rows: 350px 350px 350px;
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+  }
+}

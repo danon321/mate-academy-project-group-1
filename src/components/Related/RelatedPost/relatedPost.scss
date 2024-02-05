@@ -1,0 +1,43 @@
+.relatedPost {
+  color: #e5e5e5;
+  font-family: Lora;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 400;
+  width: 340px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px 40px;
+  justify-content: space-between;
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-start;
+  }
+
+  &__photo {
+    opacity: 0.9;
+  }
+
+  &__date {
+    line-height: normal;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    width: 270px;
+    margin: 0;
+    height: 50px;
+  }
+
+  &__description {
+    line-height: 20px;
+    margin: 10px 0 0;
+    height: 60px;
+  }
+}
