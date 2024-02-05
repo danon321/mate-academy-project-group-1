@@ -20,6 +20,7 @@ import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Like } from '../../utils/Likes';
+import { RelatedPosts } from '../../components/Related/RelatedPosts/RelatedPosts';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -82,6 +83,7 @@ export const PostPage = () => {
           </CardContent>
         </Card>
       </Box>
+      <RelatedPosts />
     </>
   );
 };
