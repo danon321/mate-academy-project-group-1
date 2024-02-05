@@ -1,5 +1,6 @@
 import { Post } from '../../types/post';
-import { fullDate } from '../../utils/date/date';
+import { fullDate } from '../../utils/Date/date';
+import { limitContent } from '../../utils/limitContent/limitContent';
 import './homePost.scss';
 
 type Props = {
@@ -7,13 +8,6 @@ type Props = {
 };
 
 export const HomePost: React.FC<Props> = ({ post }: Props) => {
-  const limitContent = (content: string, maxChars: number) => {
-    if (content.length > maxChars) {
-      return content.slice(0, maxChars) + '...';
-    }
-    return content;
-  };
-
   return (
     <div className="post-container">
       <div className="post-image">
