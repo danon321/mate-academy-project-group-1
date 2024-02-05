@@ -6,17 +6,19 @@ import User from './pages/User/User';
 import NotFound from './pages/NotFound/NotFound';
 import { PostPage } from './pages/post';
 import { Footer } from './components/Footer/Footer';
+import AddUser from './components/Add/AddUser';
 
 const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
-        {/* <Route path="/add" element={<AddUser />} /> */}
+        <Route path="/add" element={<AddUser />} />
         <Route path="/users/:id" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/posts/:id" element={<PostPage />} />
+        <Route path="/users/:id/posts" element={<PostPage />} />
       </Routes>
       <Footer />
     </Router>
