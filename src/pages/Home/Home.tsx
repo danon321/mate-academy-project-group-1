@@ -1,9 +1,9 @@
 import { HomePost } from '../../components/HomePost/HomePost';
 import './home.scss';
 import ImageSlider from '../../components/Slideshow/Slideshow';
-import { Error } from '../../components/States/Error/Error';
+import { Error } from '../../components/Error/Error';
 import { useAppDispatch, usePostSelector } from '../../app/redux/hooks/hooks';
-import { SkeletonHomePost } from '../../components/States/Skeleton/SkeletonHomePost';
+import { SkeletonHomePost } from '../../components/HomePost/SkeletonHomePost';
 import { useEffect } from 'react';
 import { fetchPosts } from '../../api/services/fetchPost';
 
