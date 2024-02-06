@@ -34,6 +34,7 @@ export const Home: React.FC = () => {
       <ImageSlider />
       <Categories />
       <div className="container">
+        <h1 className='title'>All posts</h1>
         <div className="post-grid">
           {data.posts.length === 0 ? (
             getCount().map((count) => {
