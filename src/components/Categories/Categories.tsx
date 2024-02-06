@@ -20,7 +20,7 @@ export const Categories = () => {
 
   return (
     <div className="container categories">
-      <h1>Category</h1>
+      <h1>Categories</h1>
       <div className='categories__grid'>
         {categories.map((category) => (
           <CategoryComponent key={category.id} category={category}/>
