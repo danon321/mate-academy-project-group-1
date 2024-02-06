@@ -6,6 +6,7 @@ import { useAppDispatch, usePostSelector } from '../../app/redux/hooks/hooks';
 import { SkeletonHomePost } from '../../components/HomePost/SkeletonHomePost';
 import { useEffect } from 'react';
 import { fetchPosts } from '../../api/services/fetchPost';
+import { Categories } from '../../components/Categories/Categories';
 
 export const Home: React.FC = () => {
   const data = usePostSelector((state) => state.posts);
@@ -31,6 +32,7 @@ export const Home: React.FC = () => {
   return (
     <>
       <ImageSlider />
+      <Categories />
       <div className="container">
         <div className="post-grid">
           {data.posts.length === 0 ? (
@@ -39,9 +41,7 @@ export const Home: React.FC = () => {
             })
           ) : !data.error ? (
             data.posts.map((post) => {
-              return (
-                <HomePost key={post.id} post={post} />
-              );
+              return <HomePost key={post.id} post={post} />;
             })
           ) : (
             <Error />
