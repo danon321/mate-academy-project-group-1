@@ -9,7 +9,7 @@ type Props = {
 
 export const CategoryComponent: React.FC<Props> = ({ category }: Props) => {
   return (
-    <Link to={`/catgory/${category.id}/posts`}>
+    <Link to={`/category/${category.title.toLowerCase()}`}>
       <div
         style={{ backgroundImage: 'url(' + category.image + ')' }}
         className="category content"

@@ -17,19 +17,19 @@
 
 .content {
   &__title {
-    color: white;
-    font-size: 48px;
+    color: #FFF;
+    font-size: 40px;
     margin: 0;
     display: flex;
     justify-content: center;
     background-color: $background-shadow;
-    padding: 120px 20px 0;
+    padding: 100px 20px 0;
   }
 
   &__about {
-    color: white;
+    color: #FFF;
     margin: 0;
-    height: 120px;
+    height: 130px;
     background-color: $background-shadow;
     padding: 20px 20px 0;
   }
