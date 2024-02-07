@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { postSlice } from './redux/features/posts/post-slice';
 import { userSlice } from './redux/features/users/user-slice';
+import { categorySlice } from './redux/features/categories/category-slice';
 
 const GETPOST = 'getPost';
 const ADD_LIKE = 'addLike';
@@ -18,6 +19,7 @@ const store = configureStore({
   reducer: {
     posts: postSlice.reducer,
     users: userSlice.reducer,
+    categories: categorySlice.reducer,
   },
 });
 

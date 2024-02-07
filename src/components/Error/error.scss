@@ -1,0 +1,21 @@
+.error {
+  width: 100%;
+
+  &-container {
+    width: 1300px;
+    height: 300px;
+    min-height: calc(100vh - 380px - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-description {
+    font-size: 2.5rem;
+  }
+
+  &-alert {
+    width: 86px;
+  }
+}

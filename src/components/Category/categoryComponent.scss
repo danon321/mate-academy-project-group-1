@@ -1,0 +1,36 @@
+@import '../../style/variables/variables.scss';
+
+.category {
+  width: 310px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.content {
+  &__title {
+    color: #FFF;
+    font-size: 40px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $background-shadow;
+    padding: 100px 20px 0;
+  }
+
+  &__about {
+    color: #FFF;
+    margin: 0;
+    height: 130px;
+    background-color: $background-shadow;
+    padding: 20px 20px 0;
+  }
+}
