@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../../pages/User/user.scss';
 import { Skeleton } from '@mui/material';
 
 export const SkeletonUser = () => {

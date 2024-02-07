@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { SkeletonUser } from '../../components/States/Skeleton/SkeletonUser';
 import './user.scss';
 import { useUserSelector } from '../../app/redux/hooks/hooks';
 import { useParams } from 'react-router-dom';
+import { SkeletonUser } from '../../components/HomePost/SkeletonUser';
 
 const User = () => {
   const { id } = useParams();

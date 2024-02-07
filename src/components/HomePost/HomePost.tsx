@@ -1,6 +1,5 @@
 import { Post } from '../../types/post';
-import { fullDate } from '../../utils/date/date';
-import './homePost.scss';
+import { fullDate } from '../../utils/Date/date';
 
 type Props = {
   post: Post;

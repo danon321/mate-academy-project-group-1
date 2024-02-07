@@ -1,3 +1,4 @@
+import './homePost.scss';
 import { Skeleton } from '@mui/material';
 
 export const SkeletonHomePost = () => {
