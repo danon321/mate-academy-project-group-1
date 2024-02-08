@@ -1,32 +1,32 @@
 import { getSearchWith } from '../../../utils/Search/SearchHelper';
-import './searchByTitle.scss';
-import { FilledInput, FormControl, InputLabel } from '@mui/material';
+import './searchPosts.scss';
 import { useSearchParams } from 'react-router-dom';
+import SearchIcon from '@mui/icons-material/Search';
 
-export const SearchByTitle = () => {
+export const SearchPosts = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <>
       <div className="container">
-        <FormControl className='search'>
-          <InputLabel htmlFor="component-filled">Search title</InputLabel>
-          <FilledInput
-            id="component-filled"
-            margin='none'
+        <div className='input__container'>
+          <input
+            className="input__search"
             type="search"
-            value={searchParams.get('title') || ''}
+            placeholder="Search title, author..."
+            value={searchParams.get('query') || ''}
             onChange={(e) => {
               const nextParams = getSearchWith(searchParams, {
-                title: e.target.value || null,
+                query: e.target.value || null,
+                
               });
 
               setSearchParams(new URLSearchParams(nextParams));
             }}
           />
-        </FormControl>
+          <SearchIcon fontSize='large'/>
+        </div>
       </div>
-      <div></div>
     </>
   );
 };

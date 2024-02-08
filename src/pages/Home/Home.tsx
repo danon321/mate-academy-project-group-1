@@ -7,9 +7,9 @@ import { SkeletonHomePost } from '../../components/HomePost/SkeletonHomePost';
 import { useEffect } from 'react';
 import { fetchPosts } from '../../api/services/fetchPost';
 import { Categories } from '../../components/Categories/Categories';
-import { SearchByTitle } from '../../components/Search/SearchByTitle/SearchByTitle';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchPosts } from '../../utils/Search/getSearchPosts';
+import { SearchPosts } from '../../components/Search/SearchPosts/SearchPosts';
 
 export const Home: React.FC = () => {
   const data = usePostSelector((state) => state.posts);
@@ -32,21 +32,17 @@ export const Home: React.FC = () => {
     };
 
     dataLoading();
- 
-  }, [searchParams.get('title')]);
+  }, [searchParams.get('query')]);
 
-  const showPosts = getSearchPosts(data.posts, searchParams.get('title'));
+  const showPosts = getSearchPosts(data.posts, searchParams.get('query'));
 
   return (
     <>
       <ImageSlider />
+      <SearchPosts />
       <Categories />
       <div className="container">
-        <div className='search'>
-          <h1 className="title">All posts</h1>
-          <SearchByTitle />
-        </div>
-
+        <h1 className="title">All posts</h1>
         <div className="post-grid">
           {data.posts.length === 0 ? (
             getCount().map((count) => {
