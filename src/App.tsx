@@ -6,13 +6,14 @@ import User from './pages/User/User';
 import NotFound from './pages/NotFound/NotFound';
 import { PostPage } from './pages/post';
 import { Footer } from './components/Footer/Footer';
+import AddPost from './components/Add/AddPost';
 
 const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
-        {/* <Route path="/add" element={<AddUser />} /> */}
+        <Route path="/add" element={<AddPost />} />
         <Route path="/users/:id" element={<User />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />

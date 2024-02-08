@@ -8,5 +8,5 @@ export const randomId = (idLength: number) => {
     randomString += availableChars.charAt(randomIndex);
   }
 
-  return randomString;
+  return Number(randomString);
 };

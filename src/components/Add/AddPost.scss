@@ -1,0 +1,106 @@
+.form {
+  padding: 80px 0; //na sztywno zeby bylo pod headerem
+
+  .AddTitle,
+  .AddContent {
+    margin-bottom: 16px;
+    width: 100%;
+
+    .title-alert,
+    .content-alert {
+      width: fit-content;
+    }
+  }
+
+  .AddContent .ql-editor {
+    min-height: 300px;
+  }
+
+  .AddPostTitle,
+  .AddPostContent {
+    width: 100%;
+
+    &.error {
+      border: 0.5px solid red;
+
+      &.AddPostTitle {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .AddPostButton {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .AddPostCategoryAndTags {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .TagBox {
+      display: flex;
+      margin-top: 8px;
+    }
+
+    .AddPostTag {
+      width: 150px;
+      margin-right: 8px;
+    }
+
+    .tags-alert {
+      width: fit-content;
+      margin-top: 8px;
+    }
+
+    .category-alert {
+      width: 150px;
+    }
+
+    .TagChip {
+      margin-top: 8px;
+    }
+  }
+
+  .AddPostImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+
+    .UploadImage {
+      width: 150px;
+      height: 100px;
+      background-color: gray;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    .UploadImageButton {
+      margin-top: 8px;
+    }
+
+    .UploadedImageView {
+      position: relative;
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .RemoveImageButton {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+      }
+    }
+  }
+}
