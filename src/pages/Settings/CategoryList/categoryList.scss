@@ -1,0 +1,26 @@
+.category-list {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-family: 'Lora-Regular';
+  
+    .category-item {
+      cursor: pointer;
+      padding: 8px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #ddd;
+      }
+  
+      &.active {
+        background-color: grey;
+        color: #fff;
+      }
+    }
+  }
+  

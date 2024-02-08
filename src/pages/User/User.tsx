@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { SkeletonUser } from '../../components/States/Skeleton/SkeletonUser';
 import './user.scss';
 import { useUserSelector } from '../../app/redux/hooks/hooks';
 import { useParams } from 'react-router-dom';
+import { SkeletonUser } from '../../components/HomePost/SkeletonUser';
 
 const User = () => {
   const { id } = useParams();
@@ -25,8 +25,8 @@ const User = () => {
       {(loading && <SkeletonUser />) || (
         <div className="container user">
           <div className="background">
-            {/* <img src={user?.background} className="background__landscape" /> */}
-            {/* <h1 className="background__motto">{user?.motto}</h1> */}
+            <img src="" className="background__landscape" />
+            <h1 className="background__motto">{/*user?.motto */}</h1>
           </div>
           <div className="info">
             <div className="details">
@@ -55,7 +55,7 @@ const User = () => {
             </div>
           </div>
           <div className="photo">
-            {/* <img src=""user?.avatar className="photo__avatar" /> */}
+            <img src="" className="photo__avatar" />
           </div>
         </div>) 
       }

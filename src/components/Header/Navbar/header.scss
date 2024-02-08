@@ -96,12 +96,11 @@ $main-colour: white;
 
   .profile-menu {
     position: absolute;
+    display: flex;
     top: 10px;
     left: -90px;
     ul {
-      width: 100px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: flex;
       background-color: white;
       border: 1px solid #ccc;
       list-style-type: none;
