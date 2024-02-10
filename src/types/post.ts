@@ -7,7 +7,8 @@ export type Post = {
   likes: number;
   dislikes: number;
   date: Date;
-  image: string | null;
-  // userId: number;
+  image: File | null;
+  category: string;
   user: User;
+  tags?: string[];
 };
