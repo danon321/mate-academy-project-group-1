@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Settings from './pages/Settings/Settings';
 import { PostPage } from './pages/post';
 import { Footer } from './components/Footer/Footer';
+import SingleCategory from './pages/SingleCategory/SingleCategory';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/users/settings" element={<Settings />} />
         <Route path="/" element={<Home />} />
         <Route path="/posts/:id" element={<PostPage />} />
+        <Route path="/category/:categoryTitle" element={<SingleCategory />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
