@@ -1,4 +1,4 @@
-import './categoryPage.scss';
+import './categoryHeader.scss';
 import './singleCategory.scss';
 import { useState } from 'react';
 // import { useAppDispatch } from '../../app/redux/hooks/hooks';
