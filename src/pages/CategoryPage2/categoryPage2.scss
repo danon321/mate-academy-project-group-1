@@ -1,9 +1,9 @@
 .slide {
-    background-image: url(../../../public/static/images/categories/image-0.jpg);
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
+  background-image: url(../../../public/static/images/categories/image-0.jpg);
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
 
 .slide__overlay {
@@ -30,7 +30,7 @@
     font-weight: bold;
     justify-content: center;
     display: flex;
-    margin-top: 10px;
+    margin: 200px auto 0;
   }
 
   &__text {
