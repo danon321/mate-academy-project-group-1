@@ -1,32 +1,40 @@
-// .post__picture {
-//     background-image: url(../../../public/static/images/categories/image-0.jpg);
-// }
+.slide {
+  background-image: url(../../../public/static/images/categories/image-0.jpg);
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
 
-.category__picture {
-    display: flex;
+.slide__overlay {
+  color: white;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+
+  &__category {
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin: 200px auto 0;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: bold;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 600px;
-    background-image: url(../../../public/static/images/categories/image-0.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-  
-    &-textbox {
-      display: flex;
-      max-width: 530px;
-    }
-  
-    &-title {
-      color: #FFF;
-      text-align: center;
-      font-family: 'Lora-Bold';
-      font-size: 36px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
+    display: flex;
+    margin: 200px auto 0;
   }
-  }
-  
 
+  &__text {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
