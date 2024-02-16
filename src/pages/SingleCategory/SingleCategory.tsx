@@ -29,17 +29,6 @@ const SingleCategory: React.FC = () => {
     navigate(currentURL.pathname + currentURL.search);
   }, [sortBy, navigate]);
 
-  const posts = testPosts;
-
-  const sortedPosts = [...posts].sort((a, b) => {
-    if (sortBy.includes('title')) {
-      return sortBy.includes('az') ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
-    } else if (sortBy.includes('date')) {
-      return sortBy.includes('newest') ? new Date(b.date).getTime() - new Date(a.date).getTime() : new Date(a.date).getTime() - new Date(b.date).getTime();
-    }
-    return 0;
-  });
-
   const handleSortChange = (option: 'title-az' | 'title-za' | 'date-newest' | 'date-oldest') => {
     setSortBy(option);
   };
@@ -54,6 +43,15 @@ const SingleCategory: React.FC = () => {
   }, [searchParams.get('query')]);
 
   const showPosts = getSearchPosts(data.posts, searchParams.get('query'));
+
+  // const sortedPosts = [...showPosts].sort((a, b) => {
+  //   if (sortBy.includes('title')) {
+  //     return sortBy.includes('az') ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
+  //   } else if (sortBy.includes('date')) {
+  //     return sortBy.includes('newest') ? new Date(b.date).getTime() - new Date(a.date).getTime() : new Date(a.date).getTime() - new Date(b.date).getTime();
+  //   }
+  //   return 0;
+  // });
 
   return (
     <>
