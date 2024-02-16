@@ -1,13 +1,11 @@
 import './categoryHeader.scss';
 import './singleCategory.scss';
 import { useEffect, useState } from 'react';
-// import { useAppDispatch } from '../../app/redux/hooks/hooks';
-// import { fetchPosts } from '../../api/services/fetchPost';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { fetchPostsByCategory } from '../../api/services/fetchPost';
-import { fetchCategories } from '../../api/services/fetchPost';
+import { fetchPostsByCategory, fetchCategories } from '../../api/services/fetchPost';
 import {
   useAppDispatch,
+  useCategorySelector,
   usePostsByCategory,
 } from '../../app/redux/hooks/hooks';
 import { HomePost } from '../../components/HomePost/HomePost';
@@ -34,7 +32,7 @@ const SingleCategory: React.FC = () => {
       (category) => category.title.toLowerCase() === categoryTitle?.toLowerCase()
     )
   );
-  const dispatch = useAppDispatch();
+ 
 
   useEffect(() => {
     const dataLoading = async () => {
