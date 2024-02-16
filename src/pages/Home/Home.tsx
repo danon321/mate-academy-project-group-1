@@ -7,15 +7,10 @@ import { SkeletonHomePost } from '../../components/HomePost/SkeletonHomePost';
 import { useEffect } from 'react';
 import { fetchPosts } from '../../api/services/fetchPost';
 import { Categories } from '../../components/Categories/Categories';
-import { useSearchParams } from 'react-router-dom';
-import { getSearchPosts } from '../../utils/Search/getSearchPosts';
-import { SearchPosts } from '../../components/Search/SearchPosts/SearchPosts';
 
 export const Home: React.FC = () => {
   const data = usePostSelector((state) => state.posts);
   const dispatch = useAppDispatch();
-
-  const [searchParams] = useSearchParams();
 
   const getCount = () => {
     const count = [];
@@ -32,14 +27,11 @@ export const Home: React.FC = () => {
     };
 
     dataLoading();
-  }, [searchParams.get('query')]);
-
-  const showPosts = getSearchPosts(data.posts, searchParams.get('query'));
+  }, []);
 
   return (
     <>
       <ImageSlider />
-      <SearchPosts />
       <Categories />
       <div className="container">
         <h1 className="title">All posts</h1>
@@ -49,7 +41,7 @@ export const Home: React.FC = () => {
               return <SkeletonHomePost key={count} />;
             })
           ) : !data.error ? (
-            showPosts.map((post) => {
+            data.posts.map((post) => {
               return <HomePost key={post.id} post={post} />;
             })
           ) : (
