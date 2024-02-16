@@ -1,6 +1,7 @@
 {
   "name": "mate-academy-project-group-1",
   "version": "0.1.0",
+  "homepage": "https://Nightycake.github.io/mate-academy-project-group-1",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -36,6 +37,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
