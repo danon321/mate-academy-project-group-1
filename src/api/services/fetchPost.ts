@@ -13,3 +13,8 @@ export const fetchCategories = createAsyncThunk('fetchCategory', async () => {
   const data = await fetch(`${URL}/categories`);
   return (await data.json()) as Category[];
 });
+
+export const fetchPostsByCategory = createAsyncThunk('fetchPostsByCategory', async (categoryTitle: string) => {
+  const data = await fetch(`${URL}/category/${categoryTitle}`);
+  return (await data.json()) as Post[];
+});
