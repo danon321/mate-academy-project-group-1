@@ -71,7 +71,9 @@ const Burger: React.FC = () => {
         <ListItemButton>
           <ListItemText className="burger-user" primary="Użytkownik" />
           <KeyboardArrowRightOutlinedIcon
-            className={`burger-user__icon ${isProfileOpen ? 'burger-user__icon--open' : ''}`}
+            className={`burger-user__icon ${
+              isProfileOpen ? 'burger-user__icon--open' : ''
+            }`}
           />
         </ListItemButton>
         {isProfileOpen && (

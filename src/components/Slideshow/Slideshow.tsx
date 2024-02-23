@@ -22,7 +22,8 @@ const ImageSlider: React.FC = () => {
       category: 'Category 1',
       date: '8 VIII 2013',
       title: 'Some title 1',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
+      content:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
     {
       id: 2,
@@ -31,7 +32,8 @@ const ImageSlider: React.FC = () => {
       category: 'Category 2',
       date: '18 XII 2019',
       title: 'Some title 2',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
+      content:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
     {
       id: 3,
@@ -40,15 +42,18 @@ const ImageSlider: React.FC = () => {
       category: 'Category 3',
       date: '31 I 2018',
       title: 'Some title 3',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
+      content:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
     {
       id: 4,
-      imageUrl: 'https://pxwall.com/wp-content/uploads/2019/04/4K-Dark-1080p-Wallpapers.jpg',
+      imageUrl:
+        'https://pxwall.com/wp-content/uploads/2019/04/4K-Dark-1080p-Wallpapers.jpg',
       category: 'Category 4',
       date: '11 VIII 2021',
       title: 'Some title 4',
-      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
+      content:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores fugit nisi quisquam. Dolor dolorum adipisci, velit aperiam consequuntur ut quibusdam tenetur eius placeat doloremque facilis quos numquam recusandae nisi maiores!',
     },
   ];
 
@@ -75,21 +80,22 @@ const ImageSlider: React.FC = () => {
     }
   };
 
-
   return (
     <div className="image-slider">
       <Slider {...settings} ref={sliderRef} initialSlide={currentSlide}>
         {images.map((slide) => (
           <div key={slide.id}>
-            
             <div
               className="slide"
               style={{
                 backgroundImage: `url(${slide.imageUrl})`,
-              }}>
+              }}
+            >
               <div className="container">
                 <div className="slide__overlay">
-                  <div className="slide__overlay__category">{slide.category}</div>
+                  <div className="slide__overlay__category">
+                    {slide.category}
+                  </div>
                   <div className="slide__overlay__title">{slide.title}</div>
                   <div className="slide__overlay__date">{slide.date}</div>
                   <div className="slide__overlay__text">{slide.content}</div>
@@ -104,10 +110,8 @@ const ImageSlider: React.FC = () => {
                     ></span>
                   ))}
                 </div>
-
               </div>
             </div>
-              
           </div>
         ))}
       </Slider>
@@ -116,4 +120,3 @@ const ImageSlider: React.FC = () => {
 };
 
 export default ImageSlider;
-

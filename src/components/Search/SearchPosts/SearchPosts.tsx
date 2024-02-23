@@ -9,7 +9,7 @@ export const SearchPosts = () => {
   return (
     <>
       <div className="container">
-        <div className='input__container'>
+        <div className="input__container">
           <input
             className="input__search"
             type="search"
@@ -18,13 +18,12 @@ export const SearchPosts = () => {
             onChange={(e) => {
               const nextParams = getSearchWith(searchParams, {
                 query: e.target.value || null,
-                
               });
 
               setSearchParams(new URLSearchParams(nextParams));
             }}
           />
-          <SearchIcon fontSize='large'/>
+          <SearchIcon fontSize="large" />
         </div>
       </div>
     </>

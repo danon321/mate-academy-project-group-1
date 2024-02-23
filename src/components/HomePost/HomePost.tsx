@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Post } from '../../types/post';
-import { fullDate } from '../../utils/Date/date';
+import { fullDate } from '../../utils/date/Date';
 
 type Props = {
   post: Post;
@@ -36,15 +36,17 @@ export const HomePost: React.FC<Props> = ({ post }: Props) => {
             Czytaj więcej...
           </a>
         </div>
-        <Link to="/users/1"><div className="avatar__grid">
-          <img
-            className="avatar__img"
-            src="/static/images/posts/fotoAvatar.svg"
-            alt="P"
-          />
-          <h5 className="avatar__name">{`${post.user.name} ${post.user.surname}`}</h5>
-          <h5 className="avatar__title">{post.user.title}</h5>
-        </div></Link>
+        <Link to="/users/1">
+          <div className="avatar__grid">
+            <img
+              className="avatar__img"
+              src="/static/images/posts/fotoAvatar.svg"
+              alt="P"
+            />
+            <h5 className="avatar__name">{`${post.user.name} ${post.user.surname}`}</h5>
+            <h5 className="avatar__title">{post.user.title}</h5>
+          </div>
+        </Link>
       </div>
     </div>
   );

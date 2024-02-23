@@ -6,7 +6,7 @@ type State = {
   isLoading: boolean;
   error: boolean;
   categories: Category[];
-}
+};
 
 const initialState: State = {
   isLoading: true,

@@ -1,40 +1,39 @@
 @import '../../style/mixins/phone.scss';
 
 .settings {
-    &__container {
-      display: flex;
-      margin: 70px auto 50px auto;
-      font-family: 'Lora-Regular';
-
-      @include phone {
-      }
-    }
-  
-    &__content {
-      h1 {
-        margin: 0 0 0 20px;
-      }
-    }
-  }
-  
-  .button {
+  &__container {
+    display: flex;
+    margin: 70px auto 50px auto;
     font-family: 'Lora-Regular';
-    margin: 20px auto auto 20px;
-    display: inline-block;
-    padding: 10px;
-    font-size: 14px;
-    color: black;
-    background-color: lightgray;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  
-    &:hover {
-      background-color: grey;
-    }
-  
-    input {
-      display: none;
+
+    @include phone {
     }
   }
-  
+
+  &__content {
+    h1 {
+      margin: 0 0 0 20px;
+    }
+  }
+}
+
+.button {
+  font-family: 'Lora-Regular';
+  margin: 20px auto auto 20px;
+  display: inline-block;
+  padding: 10px;
+  font-size: 14px;
+  color: black;
+  background-color: lightgray;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: grey;
+  }
+
+  input {
+    display: none;
+  }
+}

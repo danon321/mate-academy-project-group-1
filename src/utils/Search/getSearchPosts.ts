@@ -5,9 +5,10 @@ export const getSearchPosts = (posts: Post[], search: string | null) => {
   let filterQuery;
 
   if (search) {
-    filterQuery = filtered.filter((post) =>
-      (post.title.toLowerCase().includes(search.toLowerCase() || '') 
-      || post.user.surname.toLowerCase().includes(search.toLowerCase() || ''))
+    filterQuery = filtered.filter(
+      (post) =>
+        post.title.toLowerCase().includes(search.toLowerCase() || '') ||
+        post.user.surname.toLowerCase().includes(search.toLowerCase() || '')
     );
 
     filtered = filterQuery;

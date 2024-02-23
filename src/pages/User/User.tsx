@@ -20,7 +20,6 @@ const User = () => {
   }, []);
 
   return (
-
     <>
       {(loading && <SkeletonUser />) || (
         <div className="container user">
@@ -57,8 +56,8 @@ const User = () => {
           <div className="photo">
             <img src="" className="photo__avatar" />
           </div>
-        </div>) 
-      }
+        </div>
+      )}
     </>
   );
 };

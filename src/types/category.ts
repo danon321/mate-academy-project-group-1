@@ -3,4 +3,4 @@ export type Category = {
   title: string;
   about: string;
   image: string | null;
-}
+};
