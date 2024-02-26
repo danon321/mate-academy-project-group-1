@@ -8,7 +8,9 @@ import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Link } from 'react-router-dom';
+import AddComment from '../../components/AddComment/AddComment';
 // import { Like } from '../../utils/Likes';
+import arrow from './arrow-drop-down-rounded.svg';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -60,6 +62,23 @@ export const PostPage = () => {
                 <YouTubeIcon />
               </IconButton>
             </Box>
+          </div>
+          <AddComment />
+          <div className="sorting">
+            <p className="sorting-writting">Latest</p>
+            <img src={arrow} alt="drop down" />
+          </div>
+
+          <div className="comment-header">
+            <div className="comment-header-context">
+              <img src="" alt="full name" className="comment-header-avatar" />
+              <div className="comment-header-data">
+                <p className="comment-header-full-name">bla balbla</p>
+                <p className="comment-header-time">
+                  <span className="comment-header-num-of-days"></span>days ago
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
