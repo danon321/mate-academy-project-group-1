@@ -11,6 +11,10 @@ import { Link } from 'react-router-dom';
 import AddComment from '../../components/AddComment/AddComment';
 // import { Like } from '../../utils/Likes';
 import arrow from './arrow-drop-down-rounded.svg';
+import avatar from './Ellipse 4.jpg';
+import more from './more-horiz.svg';
+import rate from './rate-up.svg';
+import reply from './reply-rounded.svg';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -71,14 +75,26 @@ export const PostPage = () => {
 
           <div className="comment-header">
             <div className="comment-header-context">
-              <img src="" alt="full name" className="comment-header-avatar" />
+              <img src={avatar} alt="full name" className="comment-header-avatar" />
               <div className="comment-header-data">
-                <p className="comment-header-full-name">bla balbla</p>
+                <p className="comment-header-full-name">name fullname</p>
                 <p className="comment-header-time">
-                  <span className="comment-header-num-of-days"></span>days ago
+                  <span className="comment-header-num-of-days">26</span>days ago
                 </p>
               </div>
             </div>
+            <img src={more} alt="more" className="comment-more" />
+          </div>
+          <p className="comment-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aut molestiae maxime, eius corporis, impedit architecto id tempora molestias quidem illo fugit saepe aliquid iure consequatur! Minus repellendus doloribus reprehenderit!</p>
+          <button className="comment-read-more">Read more</button>
+          <div className="comment-rating">
+            <img src={rate} alt="rate up" className="comment-rating-up" />
+            <p className="comment-rating-number">26</p>
+            <img src={reply} alt="reply" className="comment-rating-reply" />
+          </div>
+
+          <div className="comment-download-comments">
+            <button className="comment-download-comments-more">Download more comments</button>
           </div>
         </div>
       </div>
