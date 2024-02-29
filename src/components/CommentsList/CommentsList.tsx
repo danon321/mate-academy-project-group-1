@@ -6,6 +6,7 @@ interface Comment {
   name: string;
   surname: string;
   text: string;
+  date: string;
 }
 
 interface CommentsListProps {
@@ -16,7 +17,7 @@ export const CommentsList: React.FC<CommentsListProps> = ({ comments }) => {
   return (
     <div>
       {comments.map((comment) => (
-        <Comment key={comment.id} id={comment.id} name={comment.name} surname={comment.surname} text={comment.text} />
+        <Comment key={comment.id} id={comment.id} name={comment.name} surname={comment.surname} text={comment.text} date={comment.date} />
       ))}
     </div>
   );
