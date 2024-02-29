@@ -14,6 +14,7 @@ import { getSearchPosts } from '../../utils/Search/getSearchPosts';
 
 const SingleCategory: React.FC = () => {
   const { categoryTitle, title } = useParams();
+
   const [sortBy, setSortBy] = useState<
     'title-az' | 'title-za' | 'date-newest' | 'date-oldest'
   >('title-az');
@@ -21,9 +22,13 @@ const SingleCategory: React.FC = () => {
   const data = usePostsByCategory((state) => state.postByCategory);
   const dispatch = useAppDispatch();
 
-  const handleSortChange = (
-    option: 'title-az' | 'title-za' | 'date-newest' | 'date-oldest'
-  ) => {
+  useEffect(() => {
+    const currentURL = new URL(window.location.href);
+    currentURL.searchParams.set('sort', sortBy);
+    navigate(currentURL.pathname + currentURL.search);
+  }, [sortBy, navigate]);
+
+  const handleSortChange = (option: 'title-az' | 'title-za' | 'date-newest' | 'date-oldest') => {
     setSortBy(option);
   };
 
@@ -52,6 +57,15 @@ const SingleCategory: React.FC = () => {
   }, [searchParams.get('query')]);
 
   const showPosts = getSearchPosts(data.posts, searchParams.get('query'));
+
+  // const sortedPosts = [...showPosts].sort((a, b) => {
+  //   if (sortBy.includes('title')) {
+  //     return sortBy.includes('az') ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
+  //   } else if (sortBy.includes('date')) {
+  //     return sortBy.includes('newest') ? new Date(b.date).getTime() - new Date(a.date).getTime() : new Date(a.date).getTime() - new Date(b.date).getTime();
+  //   }
+  //   return 0;
+  // });
 
   return (
     <>
