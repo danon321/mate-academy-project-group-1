@@ -1,7 +1,6 @@
 import './postPage.scss';
 
 import { useParams } from 'react-router';
-import { usePostSelector } from '../../app/redux/hooks/hooks';
 // import { useState } from 'react';
 import { CardHeader, Avatar, IconButton, Box } from '@mui/material';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
@@ -9,6 +8,10 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Link } from 'react-router-dom';
 import AddComment from '../../components/AddComment/AddComment';
+import { useEffect } from 'react';
+import { useAppDispatch, usePostSelector } from '../../app/redux/hooks/hooks';
+import { fetchPosts } from '../../api/services/fetchPost';
+import { fullDate } from '../../utils/date/date';
 // import { Like } from '../../utils/Likes';
 import arrow from './arrow-drop-down-rounded.svg';
 // import avatar from './Ellipse 4.jpg';
@@ -22,8 +25,19 @@ export const PostPage = () => {
   const post = usePostSelector((state) =>
     state.posts.posts.find((post) => post.id === Number(id))
   );
-
+  const dispatch = useAppDispatch();
   // const [like, setLike] = useState<boolean | undefined>(undefined);
+
+  useEffect(() => {
+    const dataLoading = async () => {
+      const posts = await fetchPosts();
+      dispatch(posts);
+    };
+
+    dataLoading();
+  }, []);
+
+  const fullName = `${post?.user.name} ${post?.user.surname}`;
 
   return (
     <>
@@ -34,7 +48,9 @@ export const PostPage = () => {
           </div>
         </div>
         <div className="container">
-          <span className="span-date">{post?.date.toString()}</span>
+          <span className="span-date">
+            {post !== undefined && fullDate(post.date)}
+          </span>
           <article className="content">{post?.content}</article>
           <div className="content-tags">
             <div className="content-tags__single">ADVENTURE</div>
@@ -52,7 +68,7 @@ export const PostPage = () => {
                     sx={{ width: 56, height: 56 }}
                   />
                 }
-                subheader="Jennifer Lawrence"
+                subheader={fullName}
               />
             </Link>
             {/* <Like like={like} setLike={setLike} /> */}

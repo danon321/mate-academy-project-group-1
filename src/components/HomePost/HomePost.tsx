@@ -25,9 +25,9 @@ export const HomePost: React.FC<Props> = ({ post }: Props) => {
         </div>
         <div className="post-description">
           <p className="post-text">{limitContent(post.content, 110)}</p>
-          <a href={`/posts/${post.id}`} className="read-more">
+          <Link to={`/posts/${post.id}`} className="read-more">
             Czytaj więcej...
-          </a>
+          </Link>
         </div>
         <Link to="/users/1"><div className="avatar__grid">
           <img

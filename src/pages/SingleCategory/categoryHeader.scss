@@ -1,13 +1,16 @@
+@import '../../style/variables/variables.scss';
 .slide {
-  background-image: url(../../../public/static/images/categories/image-0.jpg);
+  // background-image: url(../../../public/static/images/categories/image-0.jpg);
   height: 600px;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
+  background-color: $background-shadow;
 }
 
 .slide__overlay {
   color: white;
+  text-shadow: 0 0 1px #000000;
   border-radius: 5px;
   white-space: pre-wrap;
   display: flex;
@@ -31,10 +34,13 @@
     justify-content: center;
     display: flex;
     margin: 200px auto 0;
+    text-shadow: 0 0 1px #000000;
   }
 
   &__text {
     text-align: center;
     margin-top: 10px;
+    text-shadow: 0 0 1px #000000;
+    font-weight: bold;
   }
 }
