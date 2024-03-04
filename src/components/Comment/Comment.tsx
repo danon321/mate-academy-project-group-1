@@ -38,25 +38,41 @@ export const Comment: React.FC<Comment> = ({ name, surname, text, date }) => {
   const minute = 60 * second;
   const hour = 60 * minute;
   const day = 24 * hour;
+  const month = 30.4375 * day;
+  const year = 12 * month;
 
   const textTimeElapsed =
-    milisecondsElapsed > day * 2
-      ? `${Math.floor(milisecondsElapsed / day)} days ago`
-      : milisecondsElapsed > day
-        ? `${Math.floor(milisecondsElapsed / day)} day ago`
-        : milisecondsElapsed > hour * 2
-          ? `${Math.floor(milisecondsElapsed / hour)} hours ago`
-          : milisecondsElapsed > hour
-            ? `${Math.floor(milisecondsElapsed / hour)} hour ago`
-            : milisecondsElapsed > minute * 2
-              ? `${Math.floor(milisecondsElapsed / minute)} minutes ago`
-              : milisecondsElapsed > minute
-                ? `${Math.floor(milisecondsElapsed / minute)} minute ago`
-                : milisecondsElapsed > second * 2
-                  ? `${Math.floor(milisecondsElapsed / second)} seconds ago`
-                  : milisecondsElapsed > second
-                    ? `${Math.floor(milisecondsElapsed / second)} second ago`
-                    : '';
+    milisecondsElapsed > year * 2
+      ? `${Math.floor(milisecondsElapsed / year)} years ago`
+      : milisecondsElapsed > year
+        ? `${Math.floor(milisecondsElapsed / year)} year ago`
+        : milisecondsElapsed > month * 2
+          ? `${Math.floor(milisecondsElapsed / month)} months ago`
+          : milisecondsElapsed > month
+            ? `${Math.floor(milisecondsElapsed / month)} month ago`
+            : milisecondsElapsed > day * 2
+              ? `${Math.floor(milisecondsElapsed / day)} days ago`
+              : milisecondsElapsed > day
+                ? `${Math.floor(milisecondsElapsed / day)} day ago`
+                : milisecondsElapsed > hour * 2
+                  ? `${Math.floor(milisecondsElapsed / hour)} hours ago`
+                  : milisecondsElapsed > hour
+                    ? `${Math.floor(milisecondsElapsed / hour)} hour ago`
+                    : milisecondsElapsed > minute * 2
+                      ? `${Math.floor(milisecondsElapsed / minute)} minutes ago`
+                      : milisecondsElapsed > minute
+                        ? `${Math.floor(
+                          milisecondsElapsed / minute
+                        )} minute ago`
+                        : milisecondsElapsed > second * 2
+                          ? `${Math.floor(
+                            milisecondsElapsed / second
+                          )} seconds ago`
+                          : milisecondsElapsed > second
+                            ? `${Math.floor(
+                              milisecondsElapsed / second
+                            )} second ago`
+                            : '';
 
   return (
     <div className="comment">
