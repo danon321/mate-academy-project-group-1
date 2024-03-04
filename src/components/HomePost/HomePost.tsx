@@ -1,19 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Post } from '../../types/post';
 import { fullDate } from '../../utils/date/date';
-
+import { limitContent } from '../../../src/utils/limitContent/limitContent';
 type Props = {
   post: Post;
 };
 
 export const HomePost: React.FC<Props> = ({ post }: Props) => {
-  const limitContent = (content: string, maxChars: number) => {
-    if (content.length > maxChars) {
-      return content.slice(0, maxChars) + '...';
-    }
-    return content;
-  };
-
   return (
     <div className="post-container">
       <div className="post-image">

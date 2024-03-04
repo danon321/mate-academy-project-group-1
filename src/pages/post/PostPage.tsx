@@ -7,11 +7,18 @@ import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Link } from 'react-router-dom';
+import AddComment from '../../components/AddComment/AddComment';
 import { useEffect } from 'react';
 import { useAppDispatch, usePostSelector } from '../../app/redux/hooks/hooks';
 import { fetchPosts } from '../../api/services/fetchPost';
 import { fullDate } from '../../utils/date/date';
 // import { Like } from '../../utils/Likes';
+import arrow from './arrow-drop-down-rounded.svg';
+// import avatar from './Ellipse 4.jpg';
+// import more from './more-horiz.svg';
+// import rate from './rate-up.svg';
+// import reply from './reply-rounded.svg';
+import AllComments from '../../components/AllComments/AllComments';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -76,6 +83,18 @@ export const PostPage = () => {
                 <YouTubeIcon />
               </IconButton>
             </Box>
+          </div>
+          <AddComment />
+          
+          <div className="sorting">
+            <p className="sorting-writting">Latest</p>
+            <img src={arrow} alt="drop down" />
+          </div>
+
+          <AllComments />
+
+          <div className="comment-download-comments">
+            <button className="comment-download-comments-more">Download more comments</button>
           </div>
         </div>
       </div>
