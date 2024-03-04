@@ -5,6 +5,7 @@ import more from './more-horiz.svg';
 import rate from './rate-up.svg';
 import reply from './reply-rounded.svg';
 import { limitContent } from '../../utils/limitContent/limitContent';
+import { TimeElapsed } from '../../utils/timeElapsed/timeElapsed';
 
 interface Comment {
   id: string;
@@ -25,55 +26,6 @@ export const Comment: React.FC<Comment> = ({ name, surname, text, date }) => {
     setShowFullContent(!showFullContent);
   };
 
-  const todayDate = new Date();
-  const todayDateMiliseconds = todayDate.getTime();
-
-  const commentDate = date;
-  const milisecondsComment = Date.parse(commentDate);
-
-  const milisecondsElapsed = todayDateMiliseconds - milisecondsComment;
-  console.log('różnica czasu w milisekundach: ', milisecondsElapsed);
-
-  const second = 1000;
-  const minute = 60 * second;
-  const hour = 60 * minute;
-  const day = 24 * hour;
-  const month = 30.4375 * day;
-  const year = 12 * month;
-
-  const textTimeElapsed =
-    milisecondsElapsed > year * 2
-      ? `${Math.floor(milisecondsElapsed / year)} years ago`
-      : milisecondsElapsed > year
-        ? `${Math.floor(milisecondsElapsed / year)} year ago`
-        : milisecondsElapsed > month * 2
-          ? `${Math.floor(milisecondsElapsed / month)} months ago`
-          : milisecondsElapsed > month
-            ? `${Math.floor(milisecondsElapsed / month)} month ago`
-            : milisecondsElapsed > day * 2
-              ? `${Math.floor(milisecondsElapsed / day)} days ago`
-              : milisecondsElapsed > day
-                ? `${Math.floor(milisecondsElapsed / day)} day ago`
-                : milisecondsElapsed > hour * 2
-                  ? `${Math.floor(milisecondsElapsed / hour)} hours ago`
-                  : milisecondsElapsed > hour
-                    ? `${Math.floor(milisecondsElapsed / hour)} hour ago`
-                    : milisecondsElapsed > minute * 2
-                      ? `${Math.floor(milisecondsElapsed / minute)} minutes ago`
-                      : milisecondsElapsed > minute
-                        ? `${Math.floor(
-                          milisecondsElapsed / minute
-                        )} minute ago`
-                        : milisecondsElapsed > second * 2
-                          ? `${Math.floor(
-                            milisecondsElapsed / second
-                          )} seconds ago`
-                          : milisecondsElapsed > second
-                            ? `${Math.floor(
-                              milisecondsElapsed / second
-                            )} second ago`
-                            : '';
-
   return (
     <div className="comment">
       <div className="comment-header">
@@ -81,7 +33,7 @@ export const Comment: React.FC<Comment> = ({ name, surname, text, date }) => {
           <img src={avatar} alt="full name" className="comment-header-avatar" />
           <div className="comment-header-data">
             <p className="comment-header-full-name">{fullName}</p>
-            <p className="comment-header-time">{textTimeElapsed}</p>
+            <TimeElapsed startDate={new Date(date)} />
           </div>
         </div>
         <img src={more} alt="more" className="comment-more" />
